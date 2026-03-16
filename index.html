@@ -5,65 +5,83 @@
     <title>Focus → Flow → Diffuse → Sleep – Vòng lặp học tập</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      :root {
+        --page-max: 1100px;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --panel: rgba(15, 23, 42, 0.9);
+        --panel-border: rgba(31, 41, 55, 0.9);
+        --radius-lg: 24px;
+        --radius-xl: 32px;
+        --gutter: clamp(12px, 3.2vw, 28px);
+      }
       * {
         box-sizing: border-box;
       }
       body {
         margin: 0;
         background:
-          radial-gradient(circle at top, #020617 0%, #000 55%, #020617 100%);
-        color: #e5e7eb;
+          radial-gradient(circle at top, rgba(2, 6, 23, 0.96) 0%, rgba(0, 0, 0, 0.96) 55%, rgba(2, 6, 23, 0.96) 100%),
+          url("poster.svg") center top / cover no-repeat;
+        color: var(--text);
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
           sans-serif;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
       }
       header {
-        padding: 14px 32px 4px;
+        width: min(96vw, var(--page-max));
+        margin: 0 auto;
+        padding: 14px var(--gutter) 4px;
       }
       header h1 {
         margin: 0;
-        font-size: 22px;
+        font-size: clamp(18px, 1.8vw + 12px, 26px);
         font-weight: 650;
         letter-spacing: 0.03em;
         text-align: left;
+        line-height: 1.2;
       }
       header p {
         margin: 4px 0 0;
-        font-size: 13px;
-        color: #9ca3af;
+        font-size: clamp(12px, 0.55vw + 10px, 14px);
+        color: var(--muted);
         text-align: left;
+        line-height: 1.45;
       }
       .hero {
-        width: 96vw;
-        max-width: 1500px;
+        width: min(96vw, var(--page-max));
         margin: 4px auto 0;
-        padding: 18px 22px;
-        border-radius: 24px;
+        padding: clamp(12px, 2.6vw, 18px) clamp(12px, 3vw, 22px);
+        border-radius: var(--radius-lg);
         background: radial-gradient(circle at top left, #020617 0, #020617 55%, #020617 100%);
         border: 1px solid rgba(31, 41, 55, 0.85);
         box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
         display: flex;
         justify-content: space-between;
-        gap: 18px;
+        gap: clamp(12px, 2.6vw, 18px);
         align-items: center;
       }
       .hero-left {
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: clamp(12px, 2.2vw, 16px);
+        min-width: 0;
       }
       .hero-avatar-wrap {
         position: relative;
-        width: 72px;
-        height: 72px;
+        width: clamp(56px, 14vw, 72px);
+        height: clamp(56px, 14vw, 72px);
         border-radius: 999px;
         border: 2px solid rgba(56, 189, 248, 0.7);
         padding: 2px;
         background: radial-gradient(circle at 30% 0%, #22d3ee, #0f172a);
         box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.7), 0 18px 35px rgba(15, 23, 42, 0.9);
         overflow: hidden;
+        flex: 0 0 auto;
       }
       .hero-avatar {
         width: 100%;
@@ -84,12 +102,14 @@
         background: radial-gradient(circle at 20% 0%, #38bdf8, #0f172a);
       }
       .hero-text-title {
-        font-size: 16px;
+        font-size: clamp(14px, 1vw + 11px, 18px);
         font-weight: 600;
+        line-height: 1.25;
       }
       .hero-text-sub {
-        font-size: 12px;
-        color: #9ca3af;
+        font-size: clamp(12px, 0.6vw + 10px, 14px);
+        color: var(--muted);
+        line-height: 1.45;
       }
       .hero-text-sub span.system-note {
         color: #facc15;
@@ -100,30 +120,32 @@
         flex-direction: column;
         align-items: flex-end;
         gap: 6px;
-        font-size: 11px;
-        color: #9ca3af;
+        font-size: clamp(11px, 0.5vw + 9px, 12px);
+        color: var(--muted);
       }
       .hero-count-values {
         display: flex;
         gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
       .hero-count-box {
         text-align: center;
         min-width: 56px;
         padding: 4px 6px;
         border-radius: 10px;
-        background: rgba(15, 23, 42, 0.9);
-        border: 1px solid rgba(31, 41, 55, 0.9);
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
       }
       .hero-count-box strong {
         display: block;
-        font-size: 15px;
+        font-size: clamp(14px, 0.9vw + 10px, 16px);
       }
       .hero-count-box label {
         font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 0.06em;
-        color: #9ca3af;
+        color: var(--muted);
       }
       main {
         flex: 1;
@@ -131,15 +153,81 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px 10px 24px;
+        padding: 18px 10px 24px;
         gap: 18px;
+      }
+      .space-banner {
+        width: min(96vw, var(--page-max));
+        margin: 4px auto 0;
+        border-radius: clamp(22px, 4vw, 30px);
+        overflow: hidden;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        box-shadow: 0 22px 50px rgba(15, 23, 42, 0.95);
+        position: relative;
+        background: radial-gradient(circle at 10% 0%, #020617, #000);
+        isolation: isolate;
+      }
+      .space-banner-inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        align-items: stretch;
+      }
+      .space-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transform: scale(1.02);
+      }
+      .space-banner-overlay {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.22), transparent 55%),
+          linear-gradient(120deg, rgba(15, 23, 42, 0.6), rgba(2, 6, 23, 0.95));
+        mix-blend-mode: screen;
+        pointer-events: none;
+      }
+      .space-banner-text {
+        position: relative;
+        padding: clamp(12px, 3vw, 22px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        background: radial-gradient(circle at 0% 0%, rgba(15, 23, 42, 0.95), rgba(2, 6, 23, 0.98));
+      }
+      .space-banner-kicker {
+        font-size: clamp(10px, 0.5vw + 9px, 11px);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(148, 163, 184, 0.9);
+      }
+      .space-banner-title {
+        font-size: clamp(15px, 1.2vw + 12px, 20px);
+        font-weight: 600;
+      }
+      .space-banner-desc {
+        font-size: clamp(12px, 0.6vw + 10px, 13px);
+        color: var(--muted);
+        line-height: 1.45;
+      }
+      .space-banner-glow {
+        position: absolute;
+        inset-inline: 20%;
+        bottom: -18px;
+        height: 40px;
+        background: radial-gradient(circle at 50% 0, rgba(34, 211, 238, 0.7), transparent 60%);
+        opacity: 0.55;
+        filter: blur(6px);
+        pointer-events: none;
       }
       .track {
         position: relative;
-        width: 96vw;
-        max-width: 1500px;
-        padding: 26px 28px 30px;
-        border-radius: 40px;
+        width: min(96vw, var(--page-max));
+        padding: clamp(16px, 3vw, 26px) clamp(12px, 3.2vw, 28px) clamp(18px, 3.4vw, 30px);
+        border-radius: clamp(24px, 5vw, 40px);
         background: radial-gradient(circle at 10% 0%, #0b1120 0, #020617 40%, #020617 100%);
         border: 1px solid rgba(148, 163, 184, 0.25);
         box-shadow: 0 26px 60px rgba(15, 23, 42, 0.9);
@@ -199,8 +287,8 @@
         position: relative;
         padding: 14px 12px 14px;
         border-radius: 18px;
-        background: rgba(15, 23, 42, 0.9);
-        border: 1px solid rgba(31, 41, 55, 0.9);
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
         display: flex;
         flex-direction: column;
         gap: 6px;
@@ -227,21 +315,22 @@
         opacity: 1;
       }
       .step-icon {
-        font-size: 24px;
+        font-size: clamp(22px, 1.4vw + 14px, 28px);
       }
       .step-title {
-        font-size: 15px;
+        font-size: clamp(14px, 0.9vw + 11px, 16px);
         font-weight: 600;
         display: flex;
         align-items: center;
         gap: 4px;
       }
       .step-sub {
-        font-size: 12px;
-        color: #9ca3af;
+        font-size: clamp(12px, 0.55vw + 10px, 13px);
+        color: var(--muted);
+        line-height: 1.35;
       }
       .step-desc {
-        font-size: 13px;
+        font-size: clamp(13px, 0.6vw + 11px, 14px);
         color: #d1d5db;
         line-height: 1.4;
       }
@@ -279,8 +368,8 @@
         align-items: center;
         justify-content: space-between;
         gap: 8px;
-        font-size: 11px;
-        color: #9ca3af;
+        font-size: clamp(11px, 0.5vw + 9px, 12px);
+        color: var(--muted);
       }
       .surf-left {
         display: flex;
@@ -299,16 +388,18 @@
         background: radial-gradient(circle at 30% 0%, #22d3ee, #1e293b);
       }
       .timeline {
-        width: 100%;
+        width: min(96vw, var(--page-max));
         margin-top: 16px;
         padding-top: 10px;
         border-top: 1px dashed rgba(75, 85, 99, 0.7);
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 10px;
-        font-size: 13px;
-        color: #9ca3af;
+        font-size: clamp(12px, 0.6vw + 10px, 13px);
+        color: var(--muted);
         opacity: 0.95;
+        padding-inline: var(--gutter);
+        box-sizing: border-box;
       }
       .timeline span {
         padding: 4px 0 0;
@@ -316,8 +407,8 @@
       }
       .timeline strong {
         display: block;
-        font-size: 13px;
-        color: #e5e7eb;
+        font-size: clamp(12px, 0.6vw + 10px, 13px);
+        color: var(--text);
         margin-bottom: 2px;
       }
       .timeline span:nth-child(1) strong {
@@ -333,15 +424,14 @@
         color: #a5b4fc;
       }
       .spacetime {
-        width: 96vw;
-        max-width: 1500px;
+        width: min(96vw, var(--page-max));
         margin-top: 18px;
-        padding: 22px 26px 22px;
-        border-radius: 26px;
+        padding: clamp(14px, 3vw, 22px) clamp(12px, 3.2vw, 26px);
+        border-radius: clamp(20px, 3.6vw, 26px);
         background: radial-gradient(circle at top, #020617 0, #020617 60%, #020617 100%);
-        border: 1px solid rgba(31, 41, 55, 0.9);
+        border: 1px solid var(--panel-border);
         box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
-        font-size: 13px;
+        font-size: clamp(12px, 0.6vw + 10px, 13px);
       }
       .spacetime-header {
         display: flex;
@@ -349,10 +439,11 @@
         align-items: baseline;
         margin-bottom: 10px;
         gap: 6px;
+        flex-wrap: wrap;
       }
       .spacetime-header span {
-        color: #9ca3af;
-        font-size: 12px;
+        color: var(--muted);
+        font-size: clamp(11px, 0.5vw + 9px, 12px);
       }
       .spacetime-track {
         position: relative;
@@ -430,7 +521,7 @@
         justify-content: space-between;
         margin-top: 10px;
         font-size: 11px;
-        color: #9ca3af;
+        color: var(--muted);
       }
       .st-notes {
         margin-top: 12px;
@@ -438,11 +529,11 @@
         grid-template-columns: 1.3fr 1.5fr 2fr 2fr 1.6fr;
         gap: 12px;
         font-size: 12px;
-        color: #9ca3af;
+        color: var(--muted);
       }
       .st-notes strong {
         display: block;
-        color: #e5e7eb;
+        color: var(--text);
         font-weight: 500;
       }
       .st-note {
@@ -465,9 +556,11 @@
       }
       footer {
         padding: 8px 18px 14px;
-        font-size: 11px;
+        font-size: clamp(11px, 0.5vw + 9px, 12px);
         color: #6b7280;
         text-align: center;
+        width: min(96vw, var(--page-max));
+        margin: 0 auto;
       }
       .dot-path {
         position: absolute;
@@ -550,6 +643,12 @@
         }
       }
       @media (max-width: 900px) {
+        .space-banner-inner {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .space-banner-text {
+          border-top: 1px solid rgba(31, 41, 55, 0.9);
+        }
         .hero {
           flex-direction: column;
           align-items: flex-start;
@@ -558,11 +657,10 @@
           align-items: flex-start;
         }
         .track {
-          border-radius: 32px;
-          padding-inline: 14px;
+          border-radius: var(--radius-xl);
         }
         .spacetime {
-          padding-inline: 12px;
+          padding-inline: var(--gutter);
         }
         .steps {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -573,21 +671,49 @@
           display: none;
         }
         .timeline {
-          font-size: 10px;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .st-notes {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
       @media (max-width: 640px) {
         .steps {
           grid-template-columns: 1fr;
         }
-        header h1 {
-          font-size: 18px;
+        .hero-count-values {
+          justify-content: flex-start;
         }
         .st-notes {
           display: block;
         }
         .st-note {
           margin-bottom: 6px;
+        }
+      }
+      @media (max-width: 520px) {
+        .timeline {
+          grid-template-columns: 1fr;
+        }
+        .surf {
+          border-radius: 18px;
+          align-items: flex-start;
+        }
+      }
+      @media (hover: none) {
+        .step:hover {
+          transform: none;
+          box-shadow: none;
+        }
+        .step:hover::before {
+          opacity: 0;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .wave::before,
+        .wave::after,
+        .board {
+          animation: none !important;
         }
       }
     </style>
@@ -598,6 +724,25 @@
       <p>Mỗi pha là một động tác: bám sóng → vào guồng → thả trôi → nghỉ để cơ bắp &amp; neuron lớn lên.</p>
     </header>
     <main>
+      <section class="space-banner" aria-label="Không gian học tập vũ trụ của bạn">
+        <div class="space-banner-inner">
+          <div>
+            <img src="space.png" alt="Không gian vũ trụ – nền cho hành trình Focus → Flow → Diffuse → Sleep" />
+            <div class="space-banner-overlay"></div>
+          </div>
+          <div class="space-banner-text">
+            <div class="space-banner-kicker">SPACE · MIND</div>
+            <div class="space-banner-title">
+              Mỗi vòng lặp học là một quỹ đạo nhỏ trong vũ trụ riêng của bạn.
+            </div>
+            <div class="space-banner-desc">
+              Hình ảnh này là nền cho mọi thứ: nhắc rằng não bạn cũng đang di chuyển như một hành tinh – cần
+              Focus để tăng tốc, Flow để bay, Diffuse để lượn vòng, và Sleep để hoàn thành quỹ đạo.
+            </div>
+          </div>
+        </div>
+        <div class="space-banner-glow"></div>
+      </section>
       <section class="hero" aria-label="Hồ sơ học tập của Nguyễn Mạnh">
         <div class="hero-left">
           <div class="hero-avatar-wrap">
