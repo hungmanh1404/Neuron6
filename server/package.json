@@ -1,0 +1,15 @@
+{
+  "name": "focus-flow-reminder",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "remind": "node remind.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
+}
+
