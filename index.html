@@ -82,6 +82,8 @@
         box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.7), 0 18px 35px rgba(15, 23, 42, 0.9);
         overflow: hidden;
         flex: 0 0 auto;
+        transform-origin: center;
+        animation: avatar-breathe 10s ease-in-out infinite;
       }
       .hero-avatar {
         width: 100%;
@@ -222,6 +224,29 @@
         opacity: 0.55;
         filter: blur(6px);
         pointer-events: none;
+        animation: halo-pulse 12s ease-in-out infinite;
+      }
+      @keyframes avatar-breathe {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.8), 0 18px 35px rgba(15, 23, 42, 0.9);
+        }
+        40% {
+          transform: scale(1.03);
+          box-shadow: 0 0 25px rgba(56, 189, 248, 0.6), 0 24px 55px rgba(15, 23, 42, 1);
+        }
+      }
+      @keyframes halo-pulse {
+        0%,
+        100% {
+          opacity: 0.4;
+          transform: scaleX(1);
+        }
+        45% {
+          opacity: 0.9;
+          transform: scaleX(1.12);
+        }
       }
       .track {
         position: relative;
@@ -296,6 +321,7 @@
         cursor: pointer;
         transition: transform 220ms ease, box-shadow 220ms ease,
           border-color 220ms ease, background-color 220ms ease;
+        outline: none;
       }
       .step::before {
         content: "";
@@ -333,6 +359,38 @@
         font-size: clamp(13px, 0.6vw + 11px, 14px);
         color: #d1d5db;
         line-height: 1.4;
+      }
+      .step-active {
+        border-color: rgba(248, 250, 252, 0.9);
+        background: radial-gradient(circle at 0% 0%, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
+        box-shadow:
+          0 0 0 1px rgba(148, 163, 184, 0.3),
+          0 0 25px rgba(34, 211, 238, 0.55),
+          0 20px 45px rgba(15, 23, 42, 0.95);
+        transform: translateY(-4px);
+      }
+      .step-active .step-title {
+        color: #e5e7eb;
+      }
+      .step:focus-visible {
+        border-color: rgba(248, 250, 252, 0.95);
+        box-shadow:
+          0 0 0 1px rgba(148, 163, 184, 0.6),
+          0 0 18px rgba(56, 189, 248, 0.85),
+          0 14px 34px rgba(15, 23, 42, 0.95);
+        transform: translateY(-3px);
+      }
+      .step-active[data-phase="focus"] .step-icon {
+        filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.9));
+      }
+      .step-active[data-phase="flow"] .step-icon {
+        filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.9));
+      }
+      .step-active[data-phase="diffuse"] .step-icon {
+        filter: drop-shadow(0 0 10px rgba(34, 197, 94, 0.9));
+      }
+      .step-active[data-phase="sleep"] .step-icon {
+        filter: drop-shadow(0 0 10px rgba(129, 140, 248, 0.9));
       }
       .badge {
         display: inline-flex;
@@ -712,7 +770,9 @@
       @media (prefers-reduced-motion: reduce) {
         .wave::before,
         .wave::after,
-        .board {
+        .board,
+        .hero-avatar-wrap,
+        .space-banner-glow {
           animation: none !important;
         }
       }
@@ -790,7 +850,7 @@
           </div>
         </div>
         <div class="steps">
-          <article class="step" data-phase="focus">
+          <article class="step" data-phase="focus" tabindex="0" role="button" aria-label="Pha Focus - bám sóng, tập trung sâu">
             <div class="step-icon">🎯</div>
             <div class="step-title">
               Focus
@@ -802,7 +862,7 @@
               không lo những thứ khác.
             </div>
           </article>
-          <article class="step" data-phase="flow">
+          <article class="step" data-phase="flow" tabindex="0" role="button" aria-label="Pha Flow - lướt sóng, vào guồng">
             <div class="step-icon">🏄‍♂️</div>
             <div class="step-title">
               Flow
@@ -814,7 +874,7 @@
               chỉ việc giữ thăng bằng và đi xa hơn.
             </div>
           </article>
-          <article class="step" data-phase="diffuse">
+          <article class="step" data-phase="diffuse" tabindex="0" role="button" aria-label="Pha Diffuse - thả trôi, để não tự ghép nối">
             <div class="step-icon">🌊</div>
             <div class="step-title">
               Diffuse
@@ -826,7 +886,7 @@
               “À, hóa ra là vậy”.
             </div>
           </article>
-          <article class="step" data-phase="sleep">
+          <article class="step" data-phase="sleep" tabindex="0" role="button" aria-label="Pha Sleep - hồi phục cơ và neuron khi ngủ">
             <div class="step-icon">😴</div>
             <div class="step-title">
               Sleep
@@ -977,6 +1037,92 @@
 
         tick();
         setInterval(tick, 1000);
+      })();
+      (function () {
+        // Hệ "nhịp sống" cho 4 pha: Focus → Flow → Diffuse → Sleep
+        const steps = Array.from(document.querySelectorAll(".step"));
+        if (!steps.length) return;
+
+        const phaseOrder = ["focus", "flow", "diffuse", "sleep"];
+        let manualPhase = null;
+        let manualUntil = 0;
+
+        function phaseFromTime(date) {
+          const h = date.getHours();
+          const m = date.getMinutes();
+          const total = h + m / 60;
+
+          // Sáng: mini vòng Focus → Flow
+          if (total >= 6.9 && total < 8.5) {
+            return total < 7.6 ? "focus" : "flow";
+          }
+          // Tối: vòng Focus → Flow → Diffuse
+          if (total >= 20 && total < 21.5) {
+            if (total < 20.5) return "focus";
+            if (total < 21.1) return "flow";
+            return "diffuse";
+          }
+          // Còn lại: Sleep / hồi phục nền
+          return "sleep";
+        }
+
+        function highlightPhase(phase) {
+          if (!phase) return;
+          steps.forEach((el) => {
+            if (el.dataset.phase === phase) {
+              el.classList.add("step-active");
+            } else {
+              el.classList.remove("step-active");
+            }
+          });
+        }
+
+        let lastPhase = phaseFromTime(new Date());
+        highlightPhase(lastPhase);
+
+        // Cập nhật theo thời gian thực mỗi phút
+        setInterval(() => {
+          if (manualPhase && Date.now() < manualUntil) {
+            return;
+          }
+          const nowPhase = phaseFromTime(new Date());
+          if (nowPhase !== lastPhase) {
+            lastPhase = nowPhase;
+            highlightPhase(nowPhase);
+          }
+        }, 30 * 1000);
+
+        // Đồng thời chạy vòng lặp "năng lượng" ngắn để cảm giác chuyển pha liên tục
+        let energyIndex = phaseOrder.indexOf(lastPhase);
+        if (energyIndex < 0) energyIndex = 0;
+
+        setInterval(() => {
+          if (manualPhase && Date.now() < manualUntil) {
+            return;
+          }
+          energyIndex = (energyIndex + 1) % phaseOrder.length;
+          const phase = phaseOrder[energyIndex];
+          highlightPhase(phase);
+        }, 12 * 1000);
+
+        // Cho phép người dùng "chọn pha" thủ công trong vài chục giây
+        function setManualPhase(phase) {
+          manualPhase = phase;
+          manualUntil = Date.now() + 45 * 1000; // giữ 45 giây
+          highlightPhase(phase);
+        }
+
+        steps.forEach((el) => {
+          el.addEventListener("click", () => {
+            setManualPhase(el.dataset.phase);
+          });
+          el.addEventListener("keydown", (ev) => {
+            if (ev.key === "Enter" || ev.key === " ") {
+              ev.preventDefault();
+              setManualPhase(el.dataset.phase);
+            }
+          });
+        });
       })();
     </script>
   </body>
