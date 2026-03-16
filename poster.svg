@@ -1,0 +1,193 @@
+<svg width="1400" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1400" height="800" fill="url(#bgGrad)" />
+
+  <!-- Title -->
+  <text x="700" y="70" fill="#e5e7eb" font-size="34" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" text-anchor="middle" font-weight="600">
+    Vòng lặp học tập tối ưu: Focus → Flow → Diffuse → Sleep
+  </text>
+
+  <!-- Center brain circle -->
+  <circle cx="700" cy="400" r="120" fill="#020617" stroke="#38bdf8" stroke-width="3" />
+  <!-- Brain shape (stylized) -->
+  <path d="M650 360
+           C640 340, 650 320, 675 315
+           C680 295, 705 290, 720 305
+           C735 295, 760 300, 765 320
+           C790 322, 800 340, 795 360
+           C810 375, 805 400, 790 410
+           C795 430, 780 450, 760 452
+           C750 470, 725 475, 710 465
+           C690 480, 665 475, 655 460
+           C635 460, 625 445, 628 430
+           C610 420, 610 395, 625 382
+           C620 370, 630 360, 650 360
+          "
+        fill="#0ea5e9" opacity="0.9" stroke="#38bdf8" stroke-width="2" />
+
+  <!-- Brain internal "connections" -->
+  <circle cx="680" cy="360" r="6" fill="#e0f2fe"/>
+  <circle cx="720" cy="345" r="5" fill="#bae6fd"/>
+  <circle cx="740" cy="380" r="5" fill="#bae6fd"/>
+  <circle cx="700" cy="410" r="6" fill="#e0f2fe"/>
+  <line x1="680" y1="360" x2="720" y2="345" stroke="#e0f2fe" stroke-width="2" opacity="0.8"/>
+  <line x1="720" y1="345" x2="740" y2="380" stroke="#e0f2fe" stroke-width="2" opacity="0.8"/>
+  <line x1="680" y1="360" x2="700" y2="410" stroke="#e0f2fe" stroke-width="2" opacity="0.8"/>
+  <line x1="740" y1="380" x2="700" y2="410" stroke="#e0f2fe" stroke-width="2" opacity="0.8"/>
+
+  <!-- Circular arrows around brain -->
+  <path d="M700 250
+           A150 150 0 0 1 860 400"
+        fill="none" stroke="#f97316" stroke-width="3" marker-end="url(#arrowHead)" opacity="0.8"/>
+  <path d="M860 400
+           A150 150 0 0 1 700 550"
+        fill="none" stroke="#22c55e" stroke-width="3" marker-end="url(#arrowHead)" opacity="0.8"/>
+  <path d="M700 550
+           A150 150 0 0 1 540 400"
+        fill="none" stroke="#6366f1" stroke-width="3" marker-end="url(#arrowHead)" opacity="0.8"/>
+  <path d="M540 400
+           A150 150 0 0 1 700 250"
+        fill="none" stroke="#eab308" stroke-width="3" marker-end="url(#arrowHead)" opacity="0.8"/>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L6,3 z" fill="#e5e7eb" />
+    </marker>
+  </defs>
+
+  <!-- Center labels -->
+  <text x="700" y="620" fill="#e5e7eb" font-size="20" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" text-anchor="middle">
+    Focus → Flow → Diffuse → Sleep
+  </text>
+  <text x="700" y="650" fill="#9ca3af" font-size="16" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" text-anchor="middle">
+    Vòng lặp xoắn ốc giúp não học nhanh hơn, sâu hơn, bền hơn
+  </text>
+
+  <!-- Quadrant cards -->
+
+  <!-- Focus (top-left) -->
+  <g transform="translate(70,150)">
+    <rect x="0" y="0" width="360" height="240" rx="24" fill="#020617" stroke="#4f46e5" stroke-width="2" opacity="0.95"/>
+    <!-- Desk & person -->
+    <rect x="40" y="150" width="280" height="40" fill="#111827" rx="6"/>
+    <rect x="140" y="90" width="60" height="70" fill="#1e293b" rx="14"/>
+    <circle cx="170" cy="80" r="24" fill="#e5e7eb"/>
+    <!-- Book / laptop -->
+    <rect x="200" y="140" width="90" height="30" fill="#0f172a" stroke="#38bdf8" stroke-width="2" rx="4"/>
+    <!-- Laser focus -->
+    <line x1="170" y1="80" x2="230" y2="135" stroke="#22d3ee" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="230" cy="135" r="6" fill="#22d3ee"/>
+
+    <!-- Text -->
+    <text x="30" y="40" fill="#e5e7eb" font-size="22" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="600">
+      FOCUS – Tập trung sâu
+    </text>
+    <text x="30" y="70" fill="#9ca3af" font-size="15" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+      • Khoan sâu 1 điểm, mở đường đầu tiên cho kiến thức mới
+    </text>
+    <text x="30" y="92" fill="#9ca3af" font-size="15" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+      • Tắt xao nhãng, làm việc có chủ đích trong phiên ngắn
+    </text>
+  </g>
+
+  <!-- Flow (top-right) -->
+  <g transform="translate(970,150)">
+    <rect x="0" y="0" width="360" height="240" rx="24" fill="#020617" stroke="#f97316" stroke-width="2" opacity="0.95"/>
+    <!-- Mountain of books -->
+    <polygon points="60,190 150,80 240,190" fill="#1e293b"/>
+    <rect x="110" y="150" width="45" height="20" fill="#0f172a"/>
+    <rect x="125" y="135" width="45" height="18" fill="#111827"/>
+    <!-- Rail -->
+    <path d="M40 170 C 100 120, 220 120, 320 160" fill="none" stroke="#fb923c" stroke-width="6" stroke-linecap="round"/>
+    <!-- Person on rail -->
+    <circle cx="110" cy="140" r="14" fill="#e5e7eb"/>
+    <rect x="102" y="150" width="16" height="26" fill="#22c55e" rx="6"/>
+
+    <!-- Text -->
+    <text x="30" y="40" fill="#e5e7eb" font-size="22" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="600">
+      FLOW – Vào dòng chảy
+    </text>
+    <text x="30" y="70" fill="#9ca3af" font-size="15" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+      • Thử thách vừa tầm, nhịp làm việc mượt, quên thời gian
+    </text>
+    <text x="30" y="92" fill="#9ca3af" font-size="15" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+      • Mở rộng &amp; tăng tốc trên đường đã mở từ Focus
+    </text>
+  </g>
+
+  <!-- Diffuse (bottom-right) -->
+  <g transform="translate(970,430)">
+    <rect x="0" y="0" width="360" height="240" rx="24" fill="#020617" stroke="#22c55e" stroke-width="2" opacity="0.95"/>
+    <!-- Park & person walking -->
+    <rect x="0" y="170" width="360" height="50" fill="#022c22"/>
+    <circle cx="90" cy="130" r="16" fill="#e5e7eb"/>
+    <rect x="82" y="142" width="16" height="28" fill="#22c55e" rx="6"/>
+    <line x1="90" y1="170" x2="80" y2="195" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round"/>
+    <line x1="90" y1="170" x2="100" y2="195" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Idea bulbs -->
+    <circle cx="170" cy="80" r="8" fill="#bbf7d0"/>
+    <circle cx="220" cy="60" r="7" fill="#bbf7d0"/>
+    <circle cx="260" cy="95" r="9" fill="#4ade80"/>
+    <circle cx="210" cy="110" r="6" fill="#bbf7d0"/>
+    <line x1="170" y1="80" x2="220" y2="60" stroke="#bbf7d0" stroke-width="2" stroke-dasharray="4 3"/>
+    <line x1="220" y1="60" x2="260" y2="95" stroke="#bbf7d0" stroke-width="2" stroke-dasharray="4 3"/>
+    <line x1="170" y1="80" x2="210" y2="110" stroke="#bbf7d0" stroke-width="2" stroke-dasharray="4 3"/>
+    <line x1="210" y1="110" x2="260" y2="95" stroke="#bbf7d0" stroke-width="2" stroke-dasharray="4 3"/>
+
+    <!-- Text -->
+    <text x="30" y="40" fill="#e5e7eb" font-size="22" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="600">
+      DIFFUSE – Tản mát
+    </text>
+    <text x="30" y="70" fill="#9ca3af" font-size="15" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+      • Rời bàn, đi bộ, tắm, nhìn xa – không cố nghĩ
+    </text>
+    <text x="30" y="92" fill="#9ca3af" font-size="15" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+      • Não âm thầm nối các mảnh, sinh insight “à, hóa ra là vậy”
+    </text>
+  </g>
+
+  <!-- Sleep (bottom-left) -->
+  <g transform="translate(70,430)">
+    <rect x="0" y="0" width="360" height="240" rx="24" fill="#020617" stroke="#6366f1" stroke-width="2" opacity="0.95"/>
+    <!-- Bed -->
+    <rect x="40" y="150" width="280" height="70" fill="#0f172a" rx="10"/>
+    <rect x="40" y="150" width="280" height="30" fill="#1d2437" rx="10"/>
+    <!-- Person sleeping -->
+    <rect x="60" y="125" width="80" height="45" fill="#0ea5e9" rx="12"/>
+    <circle cx="90" cy="115" r="18" fill="#e5e7eb"/>
+    <!-- Z Z Z -->
+    <text x="260" y="130" fill="#9ca3af" font-size="20" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+      Z z z
+    </text>
+    <!-- Brain cutaway with robots -->
+    <circle cx="250" cy="110" r="32" fill="#0b1120" stroke="#38bdf8" stroke-width="1.5"/>
+    <!-- Neuron wires -->
+    <path d="M235 105 C240 95, 250 95, 262 100" stroke="#22d3ee" stroke-width="2" fill="none"/>
+    <path d="M238 118 C245 125, 255 125, 265 118" stroke="#22d3ee" stroke-width="2" fill="none"/>
+    <!-- Tiny robots -->
+    <rect x="242" y="100" width="10" height="8" fill="#e5e7eb" rx="2"/>
+    <rect x="258" y="120" width="10" height="8" fill="#e5e7eb" rx="2"/>
+    <line x1="247" y1="108" x2="253" y2="112" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="263" y1="128" x2="256" y2="122" stroke="#e5e7eb" stroke-width="1"/>
+
+    <!-- Text -->
+    <text x="30" y="40" fill="#e5e7eb" font-size="22" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="600">
+      SLEEP – Ngủ sâu
+    </text>
+    <text x="30" y="70" fill="#9ca3af" font-size="15" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+      • Bộ não “bảo trì công trường”: cắt bớt, gia cố kết nối quan trọng
+    </text>
+    <text x="30" y="92" fill="#9ca3af" font-size="15" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+      • Chuyển kiến thức từ ngắn hạn sang dài hạn, làm chắc “cây kiến thức”
+    </text>
+  </g>
+</svg>
+

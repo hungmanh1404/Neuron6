@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Focus → Flow → Diffuse → Sleep – Vòng lặp học tập</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at top, #020617 0%, #000 55%, #020617 100%);
+        color: #e5e7eb;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      header {
+        padding: 14px 32px 4px;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 650;
+        letter-spacing: 0.03em;
+        text-align: left;
+      }
+      header p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: #9ca3af;
+        text-align: left;
+      }
+      .hero {
+        width: 96vw;
+        max-width: 1500px;
+        margin: 4px auto 0;
+        padding: 18px 22px;
+        border-radius: 24px;
+        background: radial-gradient(circle at top left, #020617 0, #020617 55%, #020617 100%);
+        border: 1px solid rgba(31, 41, 55, 0.85);
+        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: center;
+      }
+      .hero-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .hero-avatar-wrap {
+        position: relative;
+        width: 72px;
+        height: 72px;
+        border-radius: 999px;
+        border: 2px solid rgba(56, 189, 248, 0.7);
+        padding: 2px;
+        background: radial-gradient(circle at 30% 0%, #22d3ee, #0f172a);
+        box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.7), 0 18px 35px rgba(15, 23, 42, 0.9);
+        overflow: hidden;
+      }
+      .hero-avatar {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        object-fit: cover;
+        display: block;
+      }
+      .hero-avatar-fallback {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 24px;
+        color: #e5e7eb;
+        background: radial-gradient(circle at 20% 0%, #38bdf8, #0f172a);
+      }
+      .hero-text-title {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .hero-text-sub {
+        font-size: 12px;
+        color: #9ca3af;
+      }
+      .hero-text-sub span.system-note {
+        color: #facc15;
+        font-weight: 500;
+      }
+      .hero-count {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+        font-size: 11px;
+        color: #9ca3af;
+      }
+      .hero-count-values {
+        display: flex;
+        gap: 10px;
+      }
+      .hero-count-box {
+        text-align: center;
+        min-width: 56px;
+        padding: 4px 6px;
+        border-radius: 10px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(31, 41, 55, 0.9);
+      }
+      .hero-count-box strong {
+        display: block;
+        font-size: 15px;
+      }
+      .hero-count-box label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #9ca3af;
+      }
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 10px 24px;
+        gap: 18px;
+      }
+      .track {
+        position: relative;
+        width: 96vw;
+        max-width: 1500px;
+        padding: 26px 28px 30px;
+        border-radius: 40px;
+        background: radial-gradient(circle at 10% 0%, #0b1120 0, #020617 40%, #020617 100%);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        box-shadow: 0 26px 60px rgba(15, 23, 42, 0.9);
+        overflow: hidden;
+      }
+      .wave {
+        position: absolute;
+        inset: 0;
+        opacity: 0.52;
+        background:
+          radial-gradient(circle at 0% 0%, rgba(34, 211, 238, 0.18) 0, transparent 55%),
+          radial-gradient(circle at 100% 10%, rgba(249, 115, 22, 0.18) 0, transparent 55%);
+        mix-blend-mode: screen;
+        pointer-events: none;
+      }
+      .wave::before,
+      .wave::after {
+        content: "";
+        position: absolute;
+        left: -20%;
+        right: -20%;
+        height: 140%;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.55) 0, transparent 55%);
+        opacity: 0.35;
+        filter: blur(12px);
+        animation: swell 14s ease-in-out infinite;
+      }
+      .wave::after {
+        top: auto;
+        bottom: -40%;
+        background:
+          radial-gradient(circle at 50% 100%, rgba(45, 212, 191, 0.6) 0, transparent 55%);
+        animation: swell 18s ease-in-out infinite reverse;
+      }
+      @keyframes swell {
+        0% {
+          transform: translateX(0) translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateX(6%) translateY(-6px) rotate(2deg);
+        }
+        100% {
+          transform: translateX(0) translateY(0) rotate(0deg);
+        }
+        pointer-events: none;
+      }
+      .steps {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        align-items: stretch;
+      }
+      .step {
+        position: relative;
+        padding: 14px 12px 14px;
+        border-radius: 18px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(31, 41, 55, 0.9);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-height: 120px;
+        cursor: pointer;
+        transition: transform 220ms ease, box-shadow 220ms ease,
+          border-color 220ms ease, background-color 220ms ease;
+      }
+      .step::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        opacity: 0;
+        background: radial-gradient(circle at 20% 0%, rgba(248, 250, 252, 0.1), transparent 55%);
+        transition: opacity 220ms ease;
+        pointer-events: none;
+      }
+      .step:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      }
+      .step:hover::before {
+        opacity: 1;
+      }
+      .step-icon {
+        font-size: 24px;
+      }
+      .step-title {
+        font-size: 15px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .step-sub {
+        font-size: 12px;
+        color: #9ca3af;
+      }
+      .step-desc {
+        font-size: 13px;
+        color: #d1d5db;
+        line-height: 1.4;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 2px 7px;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 500;
+      }
+      .badge.focus {
+        background: rgba(59, 130, 246, 0.12);
+        color: #60a5fa;
+      }
+      .badge.flow {
+        background: rgba(249, 115, 22, 0.14);
+        color: #fdba74;
+      }
+      .badge.diffuse {
+        background: rgba(34, 197, 94, 0.12);
+        color: #86efac;
+      }
+      .badge.sleep {
+        background: rgba(129, 140, 248, 0.16);
+        color: #a5b4fc;
+      }
+      .surf {
+        margin-top: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px dashed rgba(148, 163, 184, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 11px;
+        color: #9ca3af;
+      }
+      .surf-left {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .avatar {
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        background: radial-gradient(circle at 30% 0%, #22d3ee, #1e293b);
+      }
+      .timeline {
+        width: 100%;
+        margin-top: 16px;
+        padding-top: 10px;
+        border-top: 1px dashed rgba(75, 85, 99, 0.7);
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        font-size: 13px;
+        color: #9ca3af;
+        opacity: 0.95;
+      }
+      .timeline span {
+        padding: 4px 0 0;
+        text-align: center;
+      }
+      .timeline strong {
+        display: block;
+        font-size: 13px;
+        color: #e5e7eb;
+        margin-bottom: 2px;
+      }
+      .timeline span:nth-child(1) strong {
+        color: #60a5fa;
+      }
+      .timeline span:nth-child(2) strong {
+        color: #fb923c;
+      }
+      .timeline span:nth-child(3) strong {
+        color: #4ade80;
+      }
+      .timeline span:nth-child(4) strong {
+        color: #a5b4fc;
+      }
+      .spacetime {
+        width: 96vw;
+        max-width: 1500px;
+        margin-top: 18px;
+        padding: 22px 26px 22px;
+        border-radius: 26px;
+        background: radial-gradient(circle at top, #020617 0, #020617 60%, #020617 100%);
+        border: 1px solid rgba(31, 41, 55, 0.9);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+        font-size: 13px;
+      }
+      .spacetime-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 10px;
+        gap: 6px;
+      }
+      .spacetime-header span {
+        color: #9ca3af;
+        font-size: 12px;
+      }
+      .spacetime-track {
+        position: relative;
+        margin-top: 4px;
+        padding: 10px 0 4px;
+      }
+      .spacetime-line {
+        position: relative;
+        height: 10px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #020617, #1e293b, #020617);
+        overflow: hidden;
+        display: flex;
+      }
+      .st-seg {
+        flex: 1;
+        position: relative;
+      }
+      .st-seg.early {
+        background: linear-gradient(90deg, rgba(96, 165, 250, 0.3), transparent);
+      }
+      .st-seg.morning {
+        background: linear-gradient(90deg, rgba(250, 204, 21, 0.35), transparent);
+      }
+      .st-seg.work {
+        background: linear-gradient(90deg, rgba(148, 163, 184, 0.35), transparent);
+      }
+      .st-seg.evening {
+        background: linear-gradient(90deg, rgba(56, 189, 248, 0.35), transparent);
+      }
+      .st-seg.night {
+        background: linear-gradient(90deg, rgba(129, 140, 248, 0.4), transparent);
+      }
+      .st-cycle {
+        position: absolute;
+        top: 50%;
+        height: 18px;
+        border-radius: 999px;
+        border: 1px dashed rgba(248, 250, 252, 0.5);
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+      .st-cycle.morning {
+        left: 29%;
+        right: 56%;
+        box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.3);
+      }
+      .st-cycle.evening {
+        left: 71%;
+        right: 11%;
+        box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.3);
+      }
+      .st-cycle-label {
+        position: absolute;
+        top: -20px;
+        font-size: 12px;
+        white-space: nowrap;
+        color: #facc15;
+      }
+      .st-cycle.evening .st-cycle-label {
+        color: #38bdf8;
+      }
+      .st-dot {
+        position: absolute;
+        top: 50%;
+        width: 18px;
+        height: 18px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 20%, #fecaca, #ef4444);
+        box-shadow: 0 0 22px rgba(248, 113, 113, 0.95);
+        transform: translate(-50%, -50%);
+      }
+      .st-time-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        font-size: 11px;
+        color: #9ca3af;
+      }
+      .st-notes {
+        margin-top: 12px;
+        display: grid;
+        grid-template-columns: 1.3fr 1.5fr 2fr 2fr 1.6fr;
+        gap: 12px;
+        font-size: 12px;
+        color: #9ca3af;
+      }
+      .st-notes strong {
+        display: block;
+        color: #e5e7eb;
+        font-weight: 500;
+      }
+      .st-note {
+        text-align: left;
+      }
+      .st-note.early {
+        text-align: left;
+      }
+      .st-note.morning {
+        text-align: left;
+      }
+      .st-note.work {
+        text-align: left;
+      }
+      .st-note.evening {
+        text-align: left;
+      }
+      .st-note.night {
+        text-align: left;
+      }
+      footer {
+        padding: 8px 18px 14px;
+        font-size: 11px;
+        color: #6b7280;
+        text-align: center;
+      }
+      .dot-path {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 12%;
+        pointer-events: none;
+      }
+      .dot-path-line {
+        position: absolute;
+        left: 12%;
+        right: 12%;
+        top: 50%;
+        height: 2px;
+        background: radial-gradient(circle at left, #22d3ee, transparent),
+          linear-gradient(90deg, rgba(148, 163, 184, 0.4), rgba(148, 163, 184, 0.7), rgba(148, 163, 184, 0.4)),
+          radial-gradient(circle at right, #22c55e, transparent);
+        opacity: 0.6;
+      }
+      .board {
+        position: absolute;
+        top: 50%;
+        left: 12%;
+        width: 40px;
+        height: 10px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #22d3ee, #f97316);
+        box-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
+        transform: translate(-50%, -50%);
+        animation: ride 9s cubic-bezier(0.55, 0.1, 0.3, 0.9) infinite;
+      }
+      .board-rider {
+        position: absolute;
+        left: 50%;
+        bottom: 9px;
+        transform: translateX(-50%);
+        width: 12px;
+        height: 18px;
+        border-radius: 999px;
+        background: #e5e7eb;
+        box-shadow: 0 3px 4px rgba(15, 23, 42, 0.7);
+      }
+      .board-rider::before {
+        content: "";
+        position: absolute;
+        bottom: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: #facc15;
+      }
+      @keyframes ride {
+        0% {
+          left: 12%;
+          transform: translate(-50%, -50%) rotate(-6deg);
+        }
+        18% {
+          left: 35%;
+          transform: translate(-50%, -60%) rotate(-2deg);
+        }
+        32% {
+          left: 45%;
+          transform: translate(-50%, -48%) rotate(0deg);
+        }
+        50% {
+          left: 64%;
+          transform: translate(-50%, -58%) rotate(3deg);
+        }
+        70% {
+          left: 85%;
+          transform: translate(-50%, -50%) rotate(5deg);
+        }
+        100% {
+          left: 12%;
+          transform: translate(-50%, -50%) rotate(-6deg);
+        }
+      }
+      @media (max-width: 900px) {
+        .hero {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .hero-count {
+          align-items: flex-start;
+        }
+        .track {
+          border-radius: 32px;
+          padding-inline: 14px;
+        }
+        .spacetime {
+          padding-inline: 12px;
+        }
+        .steps {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .dot-path,
+        .dot-path-line,
+        .board {
+          display: none;
+        }
+        .timeline {
+          font-size: 10px;
+        }
+      }
+      @media (max-width: 640px) {
+        .steps {
+          grid-template-columns: 1fr;
+        }
+        header h1 {
+          font-size: 18px;
+        }
+        .st-notes {
+          display: block;
+        }
+        .st-note {
+          margin-bottom: 6px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Vòng lặp học như lướt sóng: Focus → Flow → Diffuse → Sleep</h1>
+      <p>Mỗi pha là một động tác: bám sóng → vào guồng → thả trôi → nghỉ để cơ bắp &amp; neuron lớn lên.</p>
+    </header>
+    <main>
+      <section class="hero" aria-label="Hồ sơ học tập của Nguyễn Mạnh">
+        <div class="hero-left">
+          <div class="hero-avatar-wrap">
+            <img src="manh2025.png" alt="Avatar Nguyễn Mạnh" class="hero-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          </div>
+          <div class="hero-text">
+            <div class="hero-text-title">
+              Nguyễn Mạnh · sinh <span style="color:#facc15">14/04/2001</span>
+            </div>
+            <div class="hero-text-sub">
+              Mỗi vòng lặp học hôm nay là 1 bước nhỏ hướng tới phiên bản 29&nbsp;tuổi sắc bén hơn.
+              <br />
+              <span class="system-note">Không tranh cãi với hệ thống (System).</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-count">
+          <span>Còn lại tới 29 tuổi</span>
+          <div class="hero-count-values" id="birthday-countdown">
+            <div class="hero-count-box">
+              <strong>0</strong>
+              <label>ngày</label>
+            </div>
+            <div class="hero-count-box">
+              <strong>0</strong>
+              <label>giờ</label>
+            </div>
+            <div class="hero-count-box">
+              <strong>0</strong>
+              <label>phút</label>
+            </div>
+            <div class="hero-count-box">
+              <strong>0</strong>
+              <label>giây</label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="track" aria-label="Vòng lặp học tập 4 pha">
+        <div class="wave"></div>
+        <div class="dot-path">
+          <div class="dot-path-line"></div>
+          <div class="board">
+            <div class="board-rider"></div>
+          </div>
+        </div>
+        <div class="steps">
+          <article class="step" data-phase="focus">
+            <div class="step-icon">🎯</div>
+            <div class="step-title">
+              Focus
+              <span class="badge focus">bám sóng</span>
+            </div>
+            <div class="step-sub">25–40 phút tập trung sâu vào 1 bài, 1 khái niệm.</div>
+            <div class="step-desc">
+              Giống như bạn chuẩn bị nhảy lên ván: mắt chỉ nhìn 1 con sóng. Tắt xao nhãng, khoan sâu 1 điểm,
+              không lo những thứ khác.
+            </div>
+          </article>
+          <article class="step" data-phase="flow">
+            <div class="step-icon">🏄‍♂️</div>
+            <div class="step-title">
+              Flow
+              <span class="badge flow">lướt sóng / trượt patin</span>
+            </div>
+            <div class="step-sub">Khi đã “đứng vững trên sóng”, cứ thế lướt theo quán tính.</div>
+            <div class="step-desc">
+              Bài giống nhau, nhịp quen tay → não nhận ra pattern. Cảm giác như trượt patin trên đường dốc:
+              chỉ việc giữ thăng bằng và đi xa hơn.
+            </div>
+          </article>
+          <article class="step" data-phase="diffuse">
+            <div class="step-icon">🌊</div>
+            <div class="step-title">
+              Diffuse
+              <span class="badge diffuse">thả trôi</span>
+            </div>
+            <div class="step-sub">Rời khỏi bàn, để sóng tự đưa cơ thể và ý tưởng đi.</div>
+            <div class="step-desc">
+              Bạn đi bộ, tắm, ngồi thư giãn. Bề ngoài là nghỉ, bên trong là não đang ghép các mảnh bài tập lại:
+              “À, hóa ra là vậy”.
+            </div>
+          </article>
+          <article class="step" data-phase="sleep">
+            <div class="step-icon">😴</div>
+            <div class="step-title">
+              Sleep
+              <span class="badge sleep">hồi phục cơ &amp; neuron</span>
+            </div>
+            <div class="step-sub">6,5–8 giờ ngủ: cơ bắp sau buổi tập, não sau buổi học.</div>
+            <div class="step-desc">
+              Như lúc bạn ngừng tập để cơ thể xây thêm sợi cơ mới, não cắt bớt kết nối yếu và bọc dày đường
+              hay dùng. Hôm sau lướt lại sẽ thấy dễ hơn.
+            </div>
+          </article>
+        </div>
+        <div class="surf">
+          <div class="surf-left">
+            <div class="avatar">🧠</div>
+            <span>
+              Hãy tưởng tượng mỗi ngày học là một buổi tập lướt sóng: Warm-up (Focus) → Ride (Flow) → Cool down (Diffuse) → Recovery (Sleep).
+            </span>
+          </div>
+        </div>
+      </section>
+      <section class="timeline" aria-label="Ví dụ nhịp 1 vòng trong buổi tối">
+        <span>
+          <strong>Focus</strong>
+          20:00–20:30 &middot; 1 chủ đề, 3–5 bài
+        </span>
+        <span>
+          <strong>Flow</strong>
+          20:30–21:15 &middot; lướt tiếp nhiều bài hơn
+        </span>
+        <span>
+          <strong>Diffuse</strong>
+          21:15–21:35 &middot; đi bộ, tắm, không cầm điện thoại
+        </span>
+        <span>
+          <strong>Sleep</strong>
+          Trước 23:00 &middot; cho não “lên cơ” qua đêm
+        </span>
+      </section>
+      <section class="spacetime" aria-label="Đường thời gian spacetime một ngày của bạn">
+        <div class="spacetime-header">
+          <div>
+            <strong>Spacetime ngày của Nguyễn Mạnh</strong>
+            <span>&middot; hệ quy chiếu: Đà Nẵng, Việt Nam (UTC+7)</span>
+          </div>
+          <span id="st-now-label"></span>
+        </div>
+        <div class="spacetime-track" id="spacetime-track">
+          <div class="spacetime-line">
+            <div class="st-seg early"></div>
+            <div class="st-seg morning"></div>
+            <div class="st-seg work"></div>
+            <div class="st-seg evening"></div>
+            <div class="st-seg night"></div>
+          </div>
+          <div class="st-cycle morning">
+            <span class="st-cycle-label">Vòng sáng: Focus → Flow (06:55–08:30)</span>
+          </div>
+          <div class="st-cycle evening">
+            <span class="st-cycle-label">Vòng tối: Focus → Flow → Diffuse (20:00–21:30)</span>
+          </div>
+          <div class="st-dot" id="st-dot"></div>
+          <div class="st-time-labels">
+            <span>00:00</span>
+            <span>06:00</span>
+            <span>12:00</span>
+            <span>18:00</span>
+            <span>24:00</span>
+          </div>
+        </div>
+        <div class="st-notes">
+          <div class="st-note early">
+            <strong>⏰ 04:44–06:55</strong>
+            Thức sớm (thỉnh thoảng). Nếu dậy được &amp; tỉnh: mini Focus 15–20 phút nhẹ.
+          </div>
+          <div class="st-note morning">
+            <strong>🌅 06:55–08:30</strong>
+            Cửa sổ vàng sáng. 1 vòng Focus → Flow nhỏ (30–45 phút) trước khi đi làm.
+          </div>
+          <div class="st-note work">
+            <strong>🏢 09:00–17:30</strong>
+            09:00–12:00 làm việc · 12:00–14:00 ăn &amp; ngủ trưa · 14:20–17:30 ca chiều.
+          </div>
+          <div class="st-note evening">
+            <strong>🌇 18:00–21:30</strong>
+            18:00–20:00 hồi sức (ăn, tắm, đi bộ ngắn) · 20:00–21:30 học nhẹ theo vòng Focus → Flow → Diffuse.
+          </div>
+          <div class="st-note night">
+            <strong>🌙 22:00–01:00</strong>
+            22:00–01:00 thân mật &amp; thư giãn. Sau đó ưu tiên Sleep để não chép file.
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      Mỗi lần bạn đi trọn 1 vòng như vậy là một “set tập” cho não – lặp lại nhiều ngày, đường neuron sẽ dày như cơ sau khi tập tạ.
+    </footer>
+    <script>
+      (function () {
+        const countdownEl = document.getElementById("birthday-countdown");
+        if (!countdownEl) return;
+        // 29 tuổi: sinh 14/04/2001 => 14/04/2030
+        const target = new Date(2030, 3, 14, 0, 0, 0); // tháng 3 là April
+
+        function update() {
+          const now = new Date();
+          let diff = target.getTime() - now.getTime();
+          if (diff < 0) diff = 0;
+
+          const totalSeconds = Math.floor(diff / 1000);
+          const days = Math.floor(totalSeconds / (3600 * 24));
+          const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+          const minutes = Math.floor((totalSeconds % 3600) / 60);
+          const seconds = totalSeconds % 60;
+
+          const boxes = countdownEl.querySelectorAll(".hero-count-box strong");
+          if (boxes.length === 4) {
+            boxes[0].textContent = String(days);
+            boxes[1].textContent = String(hours).padStart(2, "0");
+            boxes[2].textContent = String(minutes).padStart(2, "0");
+            boxes[3].textContent = String(seconds).padStart(2, "0");
+          }
+        }
+
+        update();
+        setInterval(update, 1000);
+      })();
+      (function () {
+        const dot = document.getElementById("st-dot");
+        const label = document.getElementById("st-now-label");
+        const track = document.getElementById("spacetime-track");
+        if (!dot || !label || !track) return;
+
+        function tick() {
+          const now = new Date();
+          const hours = now.getHours();
+          const minutes = now.getMinutes();
+          const seconds = now.getSeconds();
+          const total = hours + minutes / 60 + seconds / 3600;
+          const percent = (total / 24) * 100;
+          dot.style.left = percent + "%";
+
+          const hh = String(hours).padStart(2, "0");
+          const mm = String(minutes).padStart(2, "0");
+          const ss = String(seconds).padStart(2, "0");
+          label.textContent = `Hiện tại: ${hh}:${mm}:${ss}`;
+        }
+
+        tick();
+        setInterval(tick, 1000);
+      })();
+    </script>
+  </body>
+  </html>
+
