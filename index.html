@@ -1098,6 +1098,72 @@
           </div>
         </div>
       </section>
+      <section class="spacetime" aria-label="Lớp hành động & phản hồi" style="margin-top:12px;">
+        <div class="spacetime-header">
+          <div>
+            <strong>Action rất cụ thể hôm nay</strong>
+            <span>&middot; 3 việc nhỏ bạn có thể làm ngay</span>
+          </div>
+        </div>
+        <div class="st-notes" style="grid-template-columns: minmax(0, 1fr);">
+          <div class="st-note">
+            <strong>🎯 Focus (25 phút)</strong>
+            1 chủ đề &middot; 1 bài tập quan trọng nhất. Đặt timer, tắt thông báo, chỉ chạm đúng bài đó.
+          </div>
+          <div class="st-note">
+            <strong>🏄‍♂️ Flow (45 phút)</strong>
+            3–7 bài tương tự để não nhận pattern. Không mở tab mới, chỉ lướt trên 1 đường ray.
+          </div>
+          <div class="st-note">
+            <strong>🌊 + 🌙 Diffuse &amp; Sleep</strong>
+            Đi bộ 10–15 phút không cầm điện thoại &middot; đi ngủ đúng giờ đã hẹn với chính mình.
+          </div>
+        </div>
+      </section>
+      <section class="spacetime" id="weekly-feedback-section" aria-label="Feedback và cảm xúc" style="margin-top:10px;">
+        <div class="spacetime-header">
+          <div>
+            <strong>Feedback &amp; cảm xúc sau 1 tuần</strong>
+            <span>&middot; 3 câu hỏi để hệ tự điều chỉnh</span>
+          </div>
+        </div>
+        <div class="st-notes" style="grid-template-columns: minmax(0, 1fr);">
+          <div class="st-note">
+            <strong>📆 Tần suất vòng lặp</strong>
+            7 ngày vừa rồi, có mấy ngày bạn đi trọn 1 vòng Focus → Flow → Diffuse → Sleep?
+          </div>
+          <div class="st-note">
+            <strong>🧠 Pha yếu nhất</strong>
+            Pha nào hay bị thiếu nhất (Focus, Flow, Diffuse, Sleep)? Tuần sau muốn nâng pha nào lên 10%?
+          </div>
+          <div class="st-note">
+            <strong>💭 Khi mắc kẹt</strong>
+            1 phút thở sâu &middot; giảm độ khó bài tập &middot; nhắn cho 1 người bạn (không xoay vòng một mình).
+          </div>
+        </div>
+      </section>
+      <section class="spacetime" id="sat-note-section" aria-label="Thứ 7 bản năng có khung" style="margin-top:10px; display:none;">
+        <div class="spacetime-header">
+          <div>
+            <strong>🦁 Thứ 7 – bản năng có khung</strong>
+            <span>&middot; chỉ hiện vào đúng Thứ 7</span>
+          </div>
+        </div>
+        <div class="st-notes" style="grid-template-columns: minmax(0, 1fr);">
+          <div class="st-note">
+            <strong>☀️🧠🎯 Sáng</strong>
+            25’ Focus + 30’ Flow cho điều bạn thích.
+          </div>
+          <div class="st-note">
+            <strong>🦁🎉🌊 Trưa &rarr; tối</strong>
+            Sống bản năng: đi biển, gặp bạn, chơi, khám phá.
+          </div>
+          <div class="st-note">
+            <strong>🛡️🛌 Khung an toàn</strong>
+            Giữ giờ ngủ & sức khoẻ &middot; không làm đau người mình thương.
+          </div>
+        </div>
+      </section>
       <section class="cosmic-cycle" aria-label="Bản đồ chu kỳ Vũ trụ – Kiếp sống – Học tập">
         <div class="cosmic-cycle-header">
           <div>
@@ -1142,9 +1208,35 @@
           <div class="cosmic-arrow cosmic-arrow-6">➜</div>
         </div>
       </section>
+      <section class="spacetime" aria-label="Lời thề với bản thân" style="margin-top:10px;">
+        <div class="spacetime-header">
+          <div>
+            <strong>Nhịp sống mà bạn chọn</strong>
+            <span>&middot; phiên bản nhẹ nhàng của “lời thề”</span>
+          </div>
+        </div>
+        <div class="st-notes" style="grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);">
+          <div class="st-note">
+            <strong>🪞 Tôi muốn trở thành</strong>
+            Tôi muốn là người lặp lại vòng Focus → Flow → Diffuse → Sleep đủ lâu để vũ trụ có thể làm việc thông qua tôi.
+          </div>
+          <div class="st-note">
+            <strong>🧡 Cách tôi đối xử với bản thân</strong>
+            Không tranh cãi với hệ thống, chỉ chỉnh nhẹ thông số. Nếu trượt 1 ngày, tôi quay lại vòng lặp – không tự mắng mình.
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-      Mỗi lần bạn đi trọn 1 vòng như vậy là một “set tập” cho não – lặp lại nhiều ngày, đường neuron sẽ dày như cơ sau khi tập tạ.
+      <div style="margin-bottom:8px;">
+        Mỗi lần bạn đi trọn 1 vòng như vậy là một “set tập” cho não – lặp lại nhiều ngày, đường neuron sẽ dày như cơ sau khi tập tạ.
+      </div>
+      <button onclick="sendTelegramReminderTest()" style="margin-top:4px;border-radius:999px;padding:6px 10px;font-size:11px;background:#020617;color:#e5e7eb;border:1px solid #4b5563;cursor:pointer;">
+        📲 Test gửi noti Telegram
+      </button>
+      <button onclick="sendAllRemindersNow()" style="margin-top:4px;margin-left:6px;border-radius:999px;padding:6px 10px;font-size:11px;background:#020617;color:#e5e7eb;border:1px solid #4b5563;cursor:pointer;">
+        ⏱ Test toàn bộ lịch hôm nay
+      </button>
     </footer>
     <script>
       (function () {
@@ -1285,6 +1377,127 @@
             }
           });
         });
+      })();
+      // ==== TELEGRAM REMINDERS ====
+      function sendTelegram(text) {
+        const TOKEN = "8246910964:AAHaIYkqy9pWwnDEXP5VBmNXU4WDhn7udRA";
+        const CHAT_ID = "8270116773";
+
+        return fetch("https://api.telegram.org/bot" + TOKEN + "/sendMessage", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ chat_id: CHAT_ID, text }),
+        });
+      }
+
+      function sendTelegramReminderTest() {
+        const now = new Date();
+        const text =
+          "🔔 TEST NOTI\n\n" +
+          "Giờ gửi: " +
+          now.toTimeString().slice(0, 8) +
+          "\n" +
+          "Nếu bạn thấy tin này trên Telegram, bot đã hoạt động.";
+
+        sendTelegram(text)
+          .then((res) => {
+            if (!res.ok) {
+              console.error("Telegram error status:", res.status);
+              alert("Gửi noti THẤT BẠI (xem console).");
+            } else {
+              alert("Đã gửi noti test lên Telegram. Mở app để kiểm tra.");
+            }
+          })
+          .catch((err) => {
+            console.error("Telegram fetch error:", err);
+            alert("Lỗi kết nối khi gửi noti (xem console).");
+          });
+      }
+
+      const dailyReminders = [
+        {
+          hour: 4,
+          minute: 44,
+          text:
+            "⏰ 04:44–06:55 · Mini Focus\n\n" +
+            "Thức sớm (thỉnh thoảng). Nếu dậy được & tỉnh: 15–20' Focus nhẹ cho 1 chủ đề."
+        },
+        {
+          hour: 6,
+          minute: 55,
+          text:
+            "🌅 06:55–08:30 · Focus → Flow sáng\n\n" +
+            "1 vòng nhỏ trước khi đi làm: 25' Focus 1 chủ đề + 30–45' Flow bài tương tự."
+        },
+        {
+          hour: 18,
+          minute: 0,
+          text:
+            "🌇 18:00–20:00 · Hồi sức\n\n" +
+            "Ăn, tắm, đi bộ ngắn. Không vội học. Chuẩn bị năng lượng cho vòng tối."
+        },
+        {
+          hour: 20,
+          minute: 0,
+          text:
+            "🎯 20:00–21:30 · Vòng tối Focus → Flow → Diffuse\n\n" +
+            "20:00–20:30: Focus 1 chủ đề.\n" +
+            "20:30–21:15: Flow nhiều bài tương tự.\n" +
+            "21:15–21:30: Diffuse – đi bộ/tắm, không cầm điện thoại."
+        },
+        {
+          hour: 22,
+          minute: 0,
+          text:
+            "🌙 22:00–01:00 · Sleep\n\n" +
+            "Giảm màn hình, chuẩn bị ngủ. Ưu tiên ngủ để não 'chép file' sau vòng học tối nay."
+        }
+      ];
+
+      (function setupTimeReminders() {
+        const sentToday = new Set();
+
+        function checkAndSend() {
+          const now = new Date();
+          const h = now.getHours();
+          const m = now.getMinutes();
+          const keyPrefix = now.toISOString().slice(0, 10); // YYYY-MM-DD
+
+          dailyReminders.forEach((r, idx) => {
+            const key = keyPrefix + "-" + idx;
+            if (h === r.hour && m === r.minute && !sentToday.has(key)) {
+              sentToday.add(key);
+              sendTelegram(r.text).catch(console.error);
+            }
+          });
+        }
+
+        checkAndSend();
+        setInterval(checkAndSend, 60 * 1000);
+      })();
+
+      function sendAllRemindersNow() {
+        dailyReminders.forEach((r) => {
+          sendTelegram("⏱ TEST LỊCH\n\n" + r.text).catch(console.error);
+        });
+        alert("Đã gửi thử toàn bộ noti lịch hôm nay lên Telegram.");
+      }
+      (function () {
+        // Chỉ hiện một số lời nhắn vào tối Chủ nhật hằng tuần (theo giờ máy người dùng, gần với giờ VN)
+        const satSection = document.getElementById("sat-note-section");
+        const weeklyFeedback = document.getElementById("weekly-feedback-section");
+
+        const now = new Date();
+        const day = now.getDay(); // 0: Chủ nhật
+        const hour = now.getHours();
+        const isSundayEvening = day === 0 && hour >= 18;
+
+        if (satSection) {
+          satSection.style.display = isSundayEvening ? "" : "none";
+        }
+        if (weeklyFeedback) {
+          weeklyFeedback.style.display = isSundayEvening ? "" : "none";
+        }
       })();
     </script>
   </body>
