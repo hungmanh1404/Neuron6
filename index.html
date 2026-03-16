@@ -620,6 +620,120 @@
         width: min(96vw, var(--page-max));
         margin: 0 auto;
       }
+      .cosmic-cycle {
+        width: min(96vw, var(--page-max));
+        margin: 14px auto 0;
+        padding: clamp(16px, 3vw, 22px) clamp(14px, 3.2vw, 24px);
+        border-radius: clamp(20px, 3.6vw, 26px);
+        background: radial-gradient(circle at top, #020617 0, #020617 60%, #020617 100%);
+        border: 1px solid var(--panel-border);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+        position: relative;
+        overflow: hidden;
+      }
+      .cosmic-cycle-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .cosmic-cycle-header span {
+        color: var(--muted);
+        font-size: clamp(11px, 0.5vw + 9px, 12px);
+      }
+      .cosmic-cycle-orbit {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        gap: 12px;
+        align-items: stretch;
+      }
+      .cosmic-cycle-center {
+        position: relative;
+        grid-column: 1 / -1;
+        border-radius: 999px;
+        background: radial-gradient(circle at 20% 0%, rgba(56, 189, 248, 0.4), rgba(15, 23, 42, 0.98));
+        border: 1px solid rgba(148, 163, 184, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 14px;
+        font-size: clamp(11px, 0.5vw + 9px, 12px);
+        box-shadow: 0 10px 26px rgba(15, 23, 42, 1);
+      }
+      .cosmic-node {
+        position: relative;
+        width: 100%;
+        max-width: none;
+        padding: 8px 9px;
+        border-radius: 14px;
+        background: rgba(15, 23, 42, 0.96);
+        border: 1px solid rgba(31, 41, 55, 0.9);
+        font-size: clamp(11px, 0.5vw + 9px, 12px);
+        color: var(--muted);
+        box-shadow: 0 10px 26px rgba(15, 23, 42, 0.9);
+      }
+      .cosmic-node strong {
+        display: block;
+        color: var(--text);
+        margin-bottom: 2px;
+        font-weight: 500;
+      }
+      .cosmic-node-1 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+      .cosmic-node-2 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+      .cosmic-node-3 {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+      }
+      .cosmic-node-4 {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+      .cosmic-node-5 {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+      }
+      .cosmic-node-6 {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+      }
+      .cosmic-arrow {
+        display: none;
+      }
+      @media (max-width: 720px) {
+        .cosmic-cycle-orbit {
+          aspect-ratio: 3 / 3.6;
+        }
+        .cosmic-node {
+          font-size: 11px;
+          width: 46%;
+          max-width: none;
+        }
+        .cosmic-node-1,
+        .cosmic-node-4 {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .cosmic-node-2,
+        .cosmic-node-3 {
+          right: 3%;
+        }
+        .cosmic-node-5,
+        .cosmic-node-6 {
+          left: 3%;
+        }
+      }
       .dot-path {
         position: absolute;
         inset: 0;
@@ -772,7 +886,9 @@
         .wave::after,
         .board,
         .hero-avatar-wrap,
-        .space-banner-glow {
+        .space-banner-glow,
+        .cosmic-arrow,
+        .cosmic-cycle-center {
           animation: none !important;
         }
       }
@@ -858,8 +974,8 @@
             </div>
             <div class="step-sub">25–40 phút tập trung sâu vào 1 bài, 1 khái niệm.</div>
             <div class="step-desc">
-              Giống như bạn chuẩn bị nhảy lên ván: mắt chỉ nhìn 1 con sóng. Tắt xao nhãng, khoan sâu 1 điểm,
-              không lo những thứ khác.
+              🎯🧠 Não là máy tính sinh học – mỗi lần Focus là một lần ghi file mới. Việc của bạn là tắt xao nhãng,
+              khoan sâu 1 điểm, không lo những thứ khác.
             </div>
           </article>
           <article class="step" data-phase="flow" tabindex="0" role="button" aria-label="Pha Flow - lướt sóng, vào guồng">
@@ -870,8 +986,8 @@
             </div>
             <div class="step-sub">Khi đã “đứng vững trên sóng”, cứ thế lướt theo quán tính.</div>
             <div class="step-desc">
-              Bài giống nhau, nhịp quen tay → não nhận ra pattern. Cảm giác như trượt patin trên đường dốc:
-              chỉ việc giữ thăng bằng và đi xa hơn.
+              🏄‍♂️🌊 Bạn đang lướt trên đường ray spacetime của chính mình: bài giống nhau, nhịp quen tay →
+              não nhận ra pattern và chỉ việc giữ thăng bằng để đi xa hơn.
             </div>
           </article>
           <article class="step" data-phase="diffuse" tabindex="0" role="button" aria-label="Pha Diffuse - thả trôi, để não tự ghép nối">
@@ -882,8 +998,8 @@
             </div>
             <div class="step-sub">Rời khỏi bàn, để sóng tự đưa cơ thể và ý tưởng đi.</div>
             <div class="step-desc">
-              Bạn đi bộ, tắm, ngồi thư giãn. Bề ngoài là nghỉ, bên trong là não đang ghép các mảnh bài tập lại:
-              “À, hóa ra là vậy”.
+              🌊☁️ Lo lắng là mây trên bầu trời – Diffuse là lúc bạn đi bộ, tắm, thư giãn để mây trôi qua và
+              mạng neuron tự nối pattern bên trong.
             </div>
           </article>
           <article class="step" data-phase="sleep" tabindex="0" role="button" aria-label="Pha Sleep - hồi phục cơ và neuron khi ngủ">
@@ -894,8 +1010,8 @@
             </div>
             <div class="step-sub">6,5–8 giờ ngủ: cơ bắp sau buổi tập, não sau buổi học.</div>
             <div class="step-desc">
-              Như lúc bạn ngừng tập để cơ thể xây thêm sợi cơ mới, não cắt bớt kết nối yếu và bọc dày đường
-              hay dùng. Hôm sau lướt lại sẽ thấy dễ hơn.
+              🌙💾 Vũ trụ backup & tối ưu hoá code trong não khi bạn ngủ: cắt bớt kết nối yếu, bọc dày đường hay dùng.
+              Hôm sau lướt lại sẽ thấy dễ hơn.
             </div>
           </article>
         </div>
@@ -904,6 +1020,8 @@
             <div class="avatar">🧠</div>
             <span>
               Hãy tưởng tượng mỗi ngày học là một buổi tập lướt sóng: Warm-up (Focus) → Ride (Flow) → Cool down (Diffuse) → Recovery (Sleep).
+              <br />
+              <span style="color:#facc15;font-weight:500;">Quy tắc vàng: Việc gì nhỏ hơn 2 phút thì làm ngay luôn.</span>
             </span>
           </div>
         </div>
@@ -978,6 +1096,50 @@
             <strong>🌙 22:00–01:00</strong>
             22:00–01:00 thân mật &amp; thư giãn. Sau đó ưu tiên Sleep để não chép file.
           </div>
+        </div>
+      </section>
+      <section class="cosmic-cycle" aria-label="Bản đồ chu kỳ Vũ trụ – Kiếp sống – Học tập">
+        <div class="cosmic-cycle-header">
+          <div>
+            <strong>Bản đồ “Vũ trụ – Kiếp sống – Học tập”</strong>
+            <span>&middot; phiên bản chu kỳ cho neuron dễ hiểu</span>
+          </div>
+        </div>
+        <div class="cosmic-cycle-orbit">
+          <div class="cosmic-cycle-center">
+            🌌🧠<br />
+            Bạn là vũ trụ đang trải nghiệm chính nó – mỗi vòng là một bài học mới.
+          </div>
+          <div class="cosmic-node cosmic-node-1">
+            <strong>1️⃣ Não &amp; cái chết</strong>
+            🧠💻 Ý thức là “chương trình” trên máy neuron. 🔌❌ Tắt máy → ký ức dừng.
+          </div>
+          <div class="cosmic-node cosmic-node-2">
+            <strong>2️⃣ Thời gian</strong>
+            🛤️ Đường ray cong trong spacetime – quá khứ / hiện tại / tương lai cùng trên một đường.
+          </div>
+          <div class="cosmic-node cosmic-node-3">
+            <strong>3️⃣ Lo lắng</strong>
+            ☁️ Mây trên bầu trời; 🏔️ núi là trải nghiệm, người mình yêu, giá trị mình tạo.
+          </div>
+          <div class="cosmic-node cosmic-node-4">
+            <strong>4️⃣ Hệ học tập</strong>
+            🔁 Mỗi đời là một vòng bài học; 📚 bài lặp lại cho tới khi học được pattern.
+          </div>
+          <div class="cosmic-node cosmic-node-5">
+            <strong>5️⃣ Profile nhiều kiếp</strong>
+            ⚰️🙂 Ít sợ chết; 💰⬇️ bớt vật chất; 🎨📡 tập trung sáng tạo; 🤝❤️ ưu tiên con người.
+          </div>
+          <div class="cosmic-node cosmic-node-6">
+            <strong>6–7️⃣ Bạn = Vũ trụ</strong>
+            🌌🔁👁️ Nguyên tử từng ở sao cổ → hành tinh → cơ thể; 🧠🛰️ “You are the universe experiencing itself.”
+          </div>
+          <div class="cosmic-arrow cosmic-arrow-1">➜</div>
+          <div class="cosmic-arrow cosmic-arrow-2">➜</div>
+          <div class="cosmic-arrow cosmic-arrow-3">➜</div>
+          <div class="cosmic-arrow cosmic-arrow-4">➜</div>
+          <div class="cosmic-arrow cosmic-arrow-5">➜</div>
+          <div class="cosmic-arrow cosmic-arrow-6">➜</div>
         </div>
       </section>
     </main>
