@@ -1,0 +1,801 @@
+{
+  "sourceDir": "/Users/manh.nguyen/Desktop/nono",
+  "generatedAt": "2026-04-09T10:04:45.704Z",
+  "items": [
+    {
+      "file": "Screenshot 2025-11-04 at 12.09.56.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2025-11-04 at 12.09.56.png",
+      "text": "Context \"Ngữ cảnh\" của ứng dụng - cung Dùng để truy cập tài nguyên (resources), mỡ Activity,\ncấp thông tin về môi trường đang lấy SharedPreferences,...\nchạy. - Ví dụ: appLicationContext, activityContext .\nSingleton Mẫu thiết kế chỉ có một instance Dễ nhớ: “Chỉ một ông vua duy nhất” li,\nduy nhất trong toàn app. - Kotlin dùng object để tạo Singleton.\ncompanion object “Đối tượng đi cùng” một class — Dễ nhớ: “Bạn đồng hành của class” §\ngiống biến static trong Java. ¬ Dùng cho hằng số hoặc hàm tiện ích.\nclass A { companion object { const val TAG = \"A\" }\n}\nApplication Lớp gốc đại diện cho toàn app, Dễ nhớ: “App khởi động, Application chạy đầu tiên” zZ\nchạy trước Activity. - Custom dé quản lý dữ liệu toàn cục.\nActivity Màn hình giao diện chính. Dễ nhớ: “Mỗi màn hình là một Activity” ©\nFragment Manh giao diện tái sử dụng trong Dễ nhớ: “Miếng ghép trong Activity” &Š\nActivity.\nIntent Đối tượng dùng dé chuyển màn Dễ nhớ: “Thư mời khởi động Activity” NI\nhình hoặc gửi dữ liệu.\nService Chạy ngầm, không có UI. Dễ nhớ: “Làm việc âm thầm” ®\nBroadcastReceiver Nhận thông báo hệ thống hoặc Dễ nhớ: “Người nghe tin tức” Ñ\napp gửi đi.\nContentProvider Cung cấp/truy cập dữ liệu giữa các Dễ nhớ: “Người chia sẻ dữ liệu” &\napp.\nM\nViewModel Lưu logic UI & dữ liệu để không Dễ nhớ: “Bộ não tạm của UI” =",
+      "quotes": [
+        "Context \"Ngữ cảnh\" của ứng dụng - cung Dùng để truy cập tài nguyên (resources), mỡ Activity,",
+        "cấp thông tin về môi trường đang lấy SharedPreferences,...",
+        "chạy. - Ví dụ: appLicationContext, activityContext .",
+        "Singleton Mẫu thiết kế chỉ có một instance Dễ nhớ: “Chỉ một ông vua duy nhất” li,",
+        "duy nhất trong toàn app. - Kotlin dùng object để tạo Singleton.",
+        "companion object “Đối tượng đi cùng” một class — Dễ nhớ: “Bạn đồng hành của class” §",
+        "giống biến static trong Java. ¬ Dùng cho hằng số hoặc hàm tiện ích.",
+        "class A { companion object { const val TAG = \"A\" }"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-19 at 16.56.21.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-19 at 16.56.21.png",
+      "text": "“ 3.5 DN TINH GON NHAT (CORE 5 NAM)\n« Không nhiều - chi đúng\n1. VCB - Xương sống hệ thống (ổn định, phòng thủ)\n2. TCB- Ngân hàng tăng trưởng có kỷ luật\n3. SSI- Đòn bẩy trực tiếp của thị trường vốn\n4. MWG- Tiêu dùng nội địa hồi phục\n5. GMD - Logistics, FDI, dòng tiền bền\n« Đây là TOP 10-15% chiến lược NBT cá nhân.\n® 4.NGUYÊN TẮC MUA (RAT QUAN TRONG)\n2€ Không mua vì “tin tốt”\n> Không mua khi ai cũng hô hào\n# Mua khi:\ns Định giá dưới trung bình chu kỳ\n« DN tốt nhưng bị nghi ngờ\n« Tin xấu ngắn hạn, nền tảng không đổi\n®- Mua trước thị trường 6-12 tháng.",
+      "quotes": [
+        "“ 3.5 DN TINH GON NHAT (CORE 5 NAM)",
+        "« Không nhiều - chi đúng",
+        "1. VCB - Xương sống hệ thống (ổn định, phòng thủ)",
+        "2. TCB- Ngân hàng tăng trưởng có kỷ luật",
+        "3. SSI- Đòn bẩy trực tiếp của thị trường vốn",
+        "4. MWG- Tiêu dùng nội địa hồi phục",
+        "5. GMD - Logistics, FDI, dòng tiền bền",
+        "« Đây là TOP 10-15% chiến lược NBT cá nhân."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-19 at 17.11.40.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-19 at 17.11.40.png",
+      "text": "IV. TONG HGP NAO NHANH (1 BANG DUY NHAT)\nDN Họ kiếm tiền bằng Vai trò\nVCB Vốn rẻ + khách hàng lớn Neo an toàn\nGMD Hạ tầng - phí - FDI Dòng tiền đều\nTCB Tăng trưởng tín dụng + dịch vụ Động cơ\nMWG Bán lẻ + quản trị chuỗi EPS tăng\nSSI Thanh khoản thị trường Pon bẩy\nV.CÂU CHOT (NHỚ 1 DONG)\n\nVCB & GMD giúp ban không chết\n\nTCB & MWG giúp bạn giàu dần\n\nSSI giúp bạn giàu nhanh khi chu kỳ mở",
+      "quotes": [
+        "IV. TONG HGP NAO NHANH (1 BANG DUY NHAT)",
+        "DN Họ kiếm tiền bằng Vai trò",
+        "VCB Vốn rẻ + khách hàng lớn Neo an toàn",
+        "GMD Hạ tầng - phí - FDI Dòng tiền đều",
+        "TCB Tăng trưởng tín dụng + dịch vụ Động cơ",
+        "MWG Bán lẻ + quản trị chuỗi EPS tăng",
+        "SSI Thanh khoản thị trường Pon bẩy",
+        "V.CÂU CHOT (NHỚ 1 DONG)"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-20 at 15.41.25.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-20 at 15.41.25.png",
+      "text": "I ® BANG SO SANH CHOT HẠ\nTiêu chí Compile-time Runtime Ø\nAi xử lý Compiler JVM\nKiểm tra Syntax, type Logic, dữ liệu\ninline [4 x\nconst val e x\nlambda object x CA\ninvoke() xX CA\nException x CA\nGC xX CA\n« © QUY TAC NHỚ NHANH (SENIOR RULE)\n® Cái gi compiler làm được > làm ở compile-time\n® Cái gì phụ thuộc dữ liệu thật - runtime",
+      "quotes": [
+        "I ® BANG SO SANH CHOT HẠ",
+        "Tiêu chí Compile-time Runtime Ø",
+        "Ai xử lý Compiler JVM",
+        "Kiểm tra Syntax, type Logic, dữ liệu",
+        "lambda object x CA",
+        "« © QUY TAC NHỚ NHANH (SENIOR RULE)",
+        "® Cái gi compiler làm được > làm ở compile-time",
+        "® Cái gì phụ thuộc dữ liệu thật - runtime"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-20 at 16.22.22.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-20 at 16.22.22.png",
+      "text": "® 5) Tom tat “cheat sheet” nhanh\n\nNhu cầu Hàm / Collection Ø\nTạo list 1ist0f, mutableListOf\n\nTạo set set0f , mutableSetOf\n\nTao map map0f , mutabLeMap0f\n\nBiến đổi map, flatMap, zip\n\nLọc filter, filterNot, filterNotNull\nTim find , first, last, any, all\nGom nhóm groupBy , partition\n\nSắp xếp sortedBy , reversed\n\nXử ly lazy asSequence()",
+      "quotes": [
+        "® 5) Tom tat “cheat sheet” nhanh",
+        "Nhu cầu Hàm / Collection Ø",
+        "Tạo list 1ist0f, mutableListOf",
+        "Tạo set set0f , mutableSetOf",
+        "Tao map map0f , mutabLeMap0f",
+        "Biến đổi map, flatMap, zip",
+        "Lọc filter, filterNot, filterNotNull",
+        "Tim find , first, last, any, all"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-28 at 16.49.19.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-28 at 16.49.19.png",
+      "text": "Ø Lich halving đầy đủ (quá khứ > tương lai)\n\nLần Năm Block Phần thưởng\nHalving #1 2012 210.000 50225\n\nHalving #2 2016 420.000 25-125\nHalving #3 2020 630.000 12.5 > 6.25\nHalving #4 2024 840.000 6.25 2 3.125\nHalving #5 2028 1.050.000 3.125 21.5625\nHalving #6 2032 1.260.000 1.5625 - 0.78125\nHalving cuối ~2140 ~6.930.000 20",
+      "quotes": [
+        "Ø Lich halving đầy đủ (quá khứ > tương lai)",
+        "Lần Năm Block Phần thưởng",
+        "Halving #1 2012 210.000 50225",
+        "Halving #2 2016 420.000 25-125",
+        "Halving #3 2020 630.000 12.5 > 6.25",
+        "Halving #4 2024 840.000 6.25 2 3.125",
+        "Halving #5 2028 1.050.000 3.125 21.5625",
+        "Halving #6 2032 1.260.000 1.5625 - 0.78125"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 11.51.41.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 11.51.41.png",
+      "text": "Là Người tham gia ẩn danh 495\nBắc Ninh thì nhót đi em, thiểu gì cơ hội, ôn tập kiến thức cho tồt, tiếng anh tốt, thiểu gì cho\nmà chui xuống Bắc Ninh làm gì cho khổ ra\n4tuan Thích Trảlời Chia sẻ\na Người tham gia ần danh 123\n+1 samsung\n3tuần Thích Trảlời Chia sẻ\nW Minh Anh .\n5% Hchọn gi rồi bạn. Samsung có vòng 3 rồi a bạn\n3tuần Thích Trảlời Chia sẻ\nLà Người tham gia ẩn danh Tác giả\nMinh Anhchon ss roiif bạn\n3tuan Thích Trảlời Chia sẻ\nxa Minh Anh\nAnonymous participant trc mh cx giống b nhưng lại chọn cty nhỏ. H cx kbt như\nthế có đúng k nữa\n2tuần Thích TrảlXï (Chia eÃ &",
+      "quotes": [
+        "Là Người tham gia ẩn danh 495",
+        "Bắc Ninh thì nhót đi em, thiểu gì cơ hội, ôn tập kiến thức cho tồt, tiếng anh tốt, thiểu gì cho",
+        "mà chui xuống Bắc Ninh làm gì cho khổ ra",
+        "4tuan Thích Trảlời Chia sẻ",
+        "a Người tham gia ần danh 123",
+        "3tuần Thích Trảlời Chia sẻ",
+        "5% Hchọn gi rồi bạn. Samsung có vòng 3 rồi a bạn",
+        "3tuần Thích Trảlời Chia sẻ"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 14.07.51.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 14.07.51.png",
+      "text": "css (9 Copy code\n#9 TicH LOY (Accumulation) - người thông minh vào\n\nØ TANG TOC (Markup) — dam déng vao\n\n® PHAN PHOT (Distribution) — người thông minh ra\n\n® SỤP ĐÔ (Markdown) — niềm tin bị phá",
+      "quotes": [
+        "#9 TicH LOY (Accumulation) - người thông minh vào",
+        "Ø TANG TOC (Markup) — dam déng vao",
+        "® PHAN PHOT (Distribution) — người thông minh ra",
+        "® SỤP ĐÔ (Markdown) — niềm tin bị phá"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 14.08.43.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 14.08.43.png",
+      "text": "III. Vì sao 90% người luôn vào SAI pha?\n\nNão người Chu kỳ\n\nCần chắc chắn Chu kỳ sinh lời cần mơ hồ\nThích đông người Pha tốt nhất luôn cô đơn\n\nGhét thua lỗ Lợi nhuận sinh ra từ chịu đựng\n® Não người = anti-chu kỳ",
+      "quotes": [
+        "III. Vì sao 90% người luôn vào SAI pha?",
+        "Cần chắc chắn Chu kỳ sinh lời cần mơ hồ",
+        "Thích đông người Pha tốt nhất luôn cô đơn",
+        "Ghét thua lỗ Lợi nhuận sinh ra từ chịu đựng",
+        "® Não người = anti-chu kỳ"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 14.42.42.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 14.42.42.png",
+      "text": "7: Wy Wi HH 1OA HE. Teil vali 187114 tidy \\vivy\n(1 lượng = 10 chi)\n¥ Vàng miếng SJC\ns Giá mua: ~ 18,7 triệu VNĐ / chỉ\ns Giá bán: ~ 19,0 triệu VNĐ / chi\n9 Vàng nhẫn 9999\ns Giá mua: ~ 18,6 — 18,7 triệu VNĐ / chỉ\ns Giá bán: ~ 18,9 - 19,0 triệu VNĐ / chi\nA Cảnh báo quan trong",
+      "quotes": [
+        "7: Wy Wi HH 1OA HE. Teil vali 187114 tidy \\vivy",
+        "(1 lượng = 10 chi)",
+        "s Giá mua: ~ 18,7 triệu VNĐ / chỉ",
+        "s Giá bán: ~ 19,0 triệu VNĐ / chi",
+        "s Giá mua: ~ 18,6 — 18,7 triệu VNĐ / chỉ",
+        "s Giá bán: ~ 18,9 - 19,0 triệu VNĐ / chi",
+        "A Cảnh báo quan trong"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 16.30.31.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 16.30.31.png",
+      "text": "® Việt Nam CHUA có công nghệ lõi cấp quốc gia\nHiện trạng:\n» 2€ Không chip\n+ 2< Không OS\n« 3 Không Al foundation\ns 2€ Không hạ tầng gốc\n®Ø Việt Nam mạnh ở công nghệ vệ tinh\ns Phần mềm\ns Giacong IT\ns Tích hợp hệ thống\n« Ung dụng AI / fintech / govtech\n« Việt Nam = tầng “Application Layer”",
+      "quotes": [
+        "® Việt Nam CHUA có công nghệ lõi cấp quốc gia",
+        "« 3 Không Al foundation",
+        "s 2€ Không hạ tầng gốc",
+        "®Ø Việt Nam mạnh ở công nghệ vệ tinh",
+        "s Tích hợp hệ thống",
+        "« Ung dụng AI / fintech / govtech",
+        "« Việt Nam = tầng “Application Layer”"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 16.50.08.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 16.50.08.png",
+      "text": "® Insight cuối (rất đáng suy nghĩ)\nNgười nghèo hỏi: “Bao giờ giàu?”\nNgười giàu hỏi: “Tôi đang ở pha nào?”",
+      "quotes": [
+        "® Insight cuối (rất đáng suy nghĩ)",
+        "Người nghèo hỏi: “Bao giờ giàu?”",
+        "Người giàu hỏi: “Tôi đang ở pha nào?”"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 16.54.38.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 16.54.38.png",
+      "text": "® Insight cuối\nNgười bình thường hỏi: “Học gì để có việc?”\nNgười tự do hỏi: “Nếu tôi biến mất, ai sẽ gặp rắc rối?”",
+      "quotes": [
+        "Người bình thường hỏi: “Học gì để có việc?”",
+        "Người tự do hỏi: “Nếu tôi biến mất, ai sẽ gặp rắc rối?”"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 16.59.50.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 16.59.50.png",
+      "text": "& Chấp niệm #2: Tốc độ quan trọng hơn sự hoàn hảo\nAltman chấp nhận:\ns Release sớm\n» Vá lỗi sau\ns Học từ thực tế\nA Điều này trái với tư duy học thuật truyền thống\n® Nhưng phù hợp với cuộc đua hàm mũ",
+      "quotes": [
+        "& Chấp niệm #2: Tốc độ quan trọng hơn sự hoàn hảo",
+        "A Điều này trái với tư duy học thuật truyền thống",
+        "® Nhưng phù hợp với cuộc đua hàm mũ"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 17.01.24.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 17.01.24.png",
+      "text": "III. Tư duy ra quyết định (Decision Framework)\n4 1. Long-term > Short-term\ns Sẵn sàng:\n+ Đốttiền\ns Chịu chỉ trích\n«Hy sinh danh tiếng ngắn hạn\n® Mọi quyết định đều nhìn 10-20 năm\nZ 2. All-in khi đã tin\ns Khi Altman tin:\ns Không đánh nhỏ\ns Không thử cho vui\n® OpenAl = canh bạc toàn bộ sự nghiệp\n4 3. Không ngại mâu thuẫn\ns Vừa:\ns Mỡ mã một phần\ns Vừa đóng lõi\ns Vừa:\ns Nói vì nhân loại\ns Vừa bắt tay Big Tech\n. ` M\n® Altman chấp nhận nghịch lý, không cần “đạo đức «ron vẹn”",
+      "quotes": [
+        "III. Tư duy ra quyết định (Decision Framework)",
+        "4 1. Long-term > Short-term",
+        "«Hy sinh danh tiếng ngắn hạn",
+        "® Mọi quyết định đều nhìn 10-20 năm",
+        "Z 2. All-in khi đã tin",
+        "s Không thử cho vui",
+        "® OpenAl = canh bạc toàn bộ sự nghiệp",
+        "4 3. Không ngại mâu thuẫn"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 17.05.34.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 17.05.34.png",
+      "text": "J 2) Startup & đầu tư ngoài OpenAl - nơi bạn có thể tham gia theo tư cach founder,\nnhân sự, hoặc bên thứ ba\nSam Altman không chỉ đứng sau OpenAl — ông còn là nhà đầu tư mạo hiểm tích cực, thông qua các quỹ\nriêng và cùng anh em mình (Hydrazine Capital, Apollo Projects, và OpenAl Startup Fund). Portfolio của\nông trải rộng nhiều lĩnh VỰC.  hustiefundye +1\nø Chiến lược đầu tư của Altman\n\n« Al &tool nền tảng\n\ns Năng lượng sạch & ha tầng (fusion, solar data center)\n\ns Biotech & longevity (kéo dài tuổi thọ)\n\ns Fintech & thanh toán\n\ns Cong nghệ hàng không siêu thanh\n\n« Altman có stake trong khoảng 400+ công ty từ năm 2019 đến nay. ` nustetunavc",
+      "quotes": [
+        "J 2) Startup & đầu tư ngoài OpenAl - nơi bạn có thể tham gia theo tư cach founder,",
+        "nhân sự, hoặc bên thứ ba",
+        "Sam Altman không chỉ đứng sau OpenAl — ông còn là nhà đầu tư mạo hiểm tích cực, thông qua các quỹ",
+        "riêng và cùng anh em mình (Hydrazine Capital, Apollo Projects, và OpenAl Startup Fund). Portfolio của",
+        "ông trải rộng nhiều lĩnh VỰC.  hustiefundye +1",
+        "ø Chiến lược đầu tư của Altman",
+        "« Al &tool nền tảng",
+        "s Năng lượng sạch & ha tầng (fusion, solar data center)"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 17.17.38.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 17.17.38.png",
+      "text": "Tém tắt các mốc quan trong của DCV\nMốc thời gian Sự kiện chính\n07/2003 Thành lập tiền thân VietFund Management\nGiữa 2025 Vốn điều lệ tăng lên 312 tỷ đồng\n04/12/2025 Chốt danh sách cổ đông để đăng ký VSD\n31/12/2025 Đăng ký giao dịch tại VSD & công bố thông tin\n19/01/2026 Giao dịch cổ phiếu DCV trên UPCoM\n20/01/2026 Nội bộ chuyển nhượng cổ phần lớn\nZ£ Ý nghĩa của các mốc này\n®Ø Đăng ký VSD và đăng ký giao dịch 2 DCV trở thành công ty đại chúng, minh bạch hơn... vso\n!Ø Ngày giao dịch đầu tiên -> là bước chuyển từ một công ty quản lý quỹ sang cổ phiếu thực tế nhà đầu\ntư có thé mua bán được... vneconony\nfØ Diễn biến giá ban đầu tăng mạnh -> phản ánh kỳ vọng của thị trường về giá trị dài han. Entrade x by DNsE\n® Chuyén nhượng nội bộ cổ đông lớn > thể hiện nhóm chủ sở hữu tái cấu trúc quyền lực, thường xuất\nhiện sau IPO/UPCoM.  vietnamrinance\nM",
+      "quotes": [
+        "Tém tắt các mốc quan trong của DCV",
+        "Mốc thời gian Sự kiện chính",
+        "07/2003 Thành lập tiền thân VietFund Management",
+        "Giữa 2025 Vốn điều lệ tăng lên 312 tỷ đồng",
+        "04/12/2025 Chốt danh sách cổ đông để đăng ký VSD",
+        "31/12/2025 Đăng ký giao dịch tại VSD & công bố thông tin",
+        "19/01/2026 Giao dịch cổ phiếu DCV trên UPCoM",
+        "20/01/2026 Nội bộ chuyển nhượng cổ phần lớn"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 17.19.28.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 17.19.28.png",
+      "text": "® BON ĐẦU IPO SẮP TỚI:\ns Hoang Anh Gia Lai International Investment JSC (IPO 2026)\ns Điện Máy Xanh (thuộc MWG)\ns Gelex Hạ tầng, CrownX (dự kiến giai đoạn 2025-2028)\n« Theo dõi công bố IPO chỉ tiết, đăng ký mua cổ trước khi niêm yết.",
+      "quotes": [
+        "® BON ĐẦU IPO SẮP TỚI:",
+        "s Hoang Anh Gia Lai International Investment JSC (IPO 2026)",
+        "s Điện Máy Xanh (thuộc MWG)",
+        "s Gelex Hạ tầng, CrownX (dự kiến giai đoạn 2025-2028)",
+        "« Theo dõi công bố IPO chỉ tiết, đăng ký mua cổ trước khi niêm yết."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 17.19.52.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 17.19.52.png",
+      "text": "“~ Iheo dol cong bo IPO chị tiết, dang Ky mua co trước khi niềm yet.\n! Lưu ý chiến lược đầu tư Việt Nam\ns Thị trường IPO đang nhộn nhịp nhất từ 2025-2028 nhờ cải cách luật và nâng hạng thị trường.\nLaodong\n« IPO ỡ Việt Nam thường có đặt mua trước khi lên sàn (book-building) > cơ hội mua giá hấp dẫn hơn\nkhi vào sàn.\n«Mua sau khi niêm yết cũng có thể kiếm lợi nếu doanh nghiệp tăng thanh khoản và tăng độ nổi bật.",
+      "quotes": [
+        "“~ Iheo dol cong bo IPO chị tiết, dang Ky mua co trước khi niềm yet.",
+        "! Lưu ý chiến lược đầu tư Việt Nam",
+        "s Thị trường IPO đang nhộn nhịp nhất từ 2025-2028 nhờ cải cách luật và nâng hạng thị trường.",
+        "«Mua sau khi niêm yết cũng có thể kiếm lợi nếu doanh nghiệp tăng thanh khoản và tăng độ nổi bật."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 22.53.28.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 22.53.28.png",
+      "text": "s Edge Al: Qualcomm\n\nA Cảnh báo\ns Đừng mua “AI” theo nhãn; hãy mua vai trò không thể thay thế.\ns_ Chu kỳ AI # chu kỳ tiền rẻ; ưu tiên cashflow + moat.",
+      "quotes": [
+        "s Edge Al: Qualcomm",
+        "s Đừng mua “AI” theo nhãn; hãy mua vai trò không thể thay thế.",
+        "s_ Chu kỳ AI # chu kỳ tiền rẻ; ưu tiên cashflow + moat."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-01-29 at 22.55.29.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-01-29 at 22.55.29.png",
+      "text": "` . 2 HN by\n\n® Chu kỳ AI: ai huéng lợi kiểu nào?\n® Ngắn & trung hạn (3-5 năm)\n\ns NVIDIA thắng lớn\n\nAI training, data center bùng nổ\n\ns Compute = nút cổ chai\n® Dài hạn (10-20 năm)\n\ns ARM thắng bền\n\n«Al đi vào mọi thiết bị\n\ns Inference > training\n\ns Edge Al > cloud-only\n$ Second-order effect:\nAI càng phổ cập > vai trò “luật chơi” càng mạnh.",
+      "quotes": [
+        "® Chu kỳ AI: ai huéng lợi kiểu nào?",
+        "® Ngắn & trung hạn (3-5 năm)",
+        "s NVIDIA thắng lớn",
+        "AI training, data center bùng nổ",
+        "s Compute = nút cổ chai",
+        "® Dài hạn (10-20 năm)",
+        "«Al đi vào mọi thiết bị",
+        "s Inference > training"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.06.34.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.06.34.png",
+      "text": "Khéng can:\n« Động lực\ns Kỷ luật thép\ns IQcao\nChỉ cần:\ns Không thương lượng với cấu trúc.",
+      "quotes": [
+        "s Không thương lượng với cấu trúc."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.08.28.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.08.28.png",
+      "text": "Nói thẳng:\ns Không phải “hiểu sâu hơn”\ns Ma là tạo ra thứ có đầu ra cụ thể",
+      "quotes": [
+        "s Không phải “hiểu sâu hơn”",
+        "s Ma là tạo ra thứ có đầu ra cụ thể"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.09.09.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.09.09.png",
+      "text": "2 CAU TRUC TOI GIÀN CHO VIEC DON BAY\n*\\ Cấu trúc duy nhất (không thương lượng)\n\nCss\n\n® 60-90 phút / ngày\n\n+ 1 đầu ra hữu hình\n\n* Không tiêu thụ thông tin\n\n«+ Không tối ưu\n\n+ Không học thêm trong lic lam\n7£ Nếu chưa xong > dừng đúng giờ (quan trong).",
+      "quotes": [
+        "2 CAU TRUC TOI GIÀN CHO VIEC DON BAY",
+        "*\\ Cấu trúc duy nhất (không thương lượng)",
+        "® 60-90 phút / ngày",
+        "+ 1 đầu ra hữu hình",
+        "* Không tiêu thụ thông tin",
+        "+ Không học thêm trong lic lam",
+        "7£ Nếu chưa xong > dừng đúng giờ (quan trong)."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.13.35.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.13.35.png",
+      "text": "II. 3 BAT CÔNG LỚN NHẤT CÓ THE KHAI THAC (MECE)\n0 Bất công tiền tệ (Currency Arbitrage) — ĐÒN BAY SỐ 1\ns Lam cùng 1 việc:\ns 5% trad VND\ns == trả USD (x10-x20 sức mua)\nCách khai thác (hợp pháp):\nBán dịch vụ số cho thị trường USD:\ns Dev/QA/Data/ AI Ops\ns Viết, research, phân tích\ns Marketing, automation, no-code\ns Remote / freelance / contract 2 thu USD, sống VND\nBan không cần giỏi hơn > chỉ cần bán ở chợ khác.",
+      "quotes": [
+        "II. 3 BAT CÔNG LỚN NHẤT CÓ THE KHAI THAC (MECE)",
+        "0 Bất công tiền tệ (Currency Arbitrage) — ĐÒN BAY SỐ 1",
+        "s Lam cùng 1 việc:",
+        "s == trả USD (x10-x20 sức mua)",
+        "Cách khai thác (hợp pháp):",
+        "Bán dịch vụ số cho thị trường USD:",
+        "s Dev/QA/Data/ AI Ops",
+        "s Viết, research, phân tích"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.14.13.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.14.13.png",
+      "text": "Ø Bất công thông tin (Information Asymmetry)\nThứ “hiển nhiên” ở Mỹ/EU > ở VN là đặc sản.\ns Người thắng là người:\ns Biết sớm\ns Áp dụng sớm\ns Việt hóa sớm\nKhai thác:\ns Theo dõi:\ns Product Hunt\ns Indie Hacker\ns GitHub Trending\ns Chuyển:\ns Tool> dịch vụ\ns Kiến thức > framework\ns Trend >2 use-case địa phương\n7£ Bạn không cần phát minh > chỉ cần đi trước 6-18 tháng.",
+      "quotes": [
+        "Ø Bất công thông tin (Information Asymmetry)",
+        "Thứ “hiển nhiên” ở Mỹ/EU > ở VN là đặc sản.",
+        "s Người thắng là người:",
+        "s Kiến thức > framework",
+        "s Trend >2 use-case địa phương",
+        "7£ Bạn không cần phát minh > chỉ cần đi trước 6-18 tháng."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.16.07.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.16.07.png",
+      "text": "Ø Bất công chi phí sống (Geo-arbitrage)\ns Sống ở nơi rẻ\nKiếm tiền ở nơi đắt\nVí dụ thô nhưng thật:\ns $3,000/tháng ở Mỹ = trung bình\ns $3,000/tháng ở VN = thượng lưu nhẹ\nA\" Đây là lý do:\ns Digital nomads\ns Indie hackers\ns Remote devs\n“Ang “yêu nước” ho yêu đòn bẩy.\nAck ChatGPT gy oy y",
+      "quotes": [
+        "Ø Bất công chi phí sống (Geo-arbitrage)",
+        "Kiếm tiền ở nơi đắt",
+        "Ví dụ thô nhưng thật:",
+        "s $3,000/tháng ở Mỹ = trung bình",
+        "s $3,000/tháng ở VN = thượng lưu nhẹ",
+        "“Ang “yêu nước” ho yêu đòn bẩy.",
+        "Ack ChatGPT gy oy y"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.17.10.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.17.10.png",
+      "text": "III.NHỮNG THU NGƯỠI KHAC ĐÃ KHAI THAC RAT HAY (BAN CO THE CHUA NGHĨ)\n® Time Arbitrage\ns Bạn hoc ban đêm\n« Họ bán ban ngày cho Mỹ\n- chu kỳ tiền lệch pha\n® Language Arbitrage\ns Biết EN + hiểu văn hóa VN\n- làm cầu nối (researcher, operator, PM, content)\n® Platform Arbitrage\ns Mỗi nền tảng mới:\ns YouTube\ns TikTok\ns Substack\ns Gumroad\n* người vào sớm thắng lớn, không cần giỏi nhất.\nalk fh¬at‡t^DT",
+      "quotes": [
+        "III.NHỮNG THU NGƯỠI KHAC ĐÃ KHAI THAC RAT HAY (BAN CO THE CHUA NGHĨ)",
+        "« Họ bán ban ngày cho Mỹ",
+        "- chu kỳ tiền lệch pha",
+        "® Language Arbitrage",
+        "s Biết EN + hiểu văn hóa VN",
+        "- làm cầu nối (researcher, operator, PM, content)",
+        "® Platform Arbitrage",
+        "s Mỗi nền tảng mới:"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.18.12.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.18.12.png",
+      "text": "® CÂU KẾT LOI\nThế giới không công bằng — và đó là tài nguyên.\nNgười nghèo chửi nó.\nNgười khôn đứng đúng chỗ trong nó.",
+      "quotes": [
+        "Thế giới không công bằng — và đó là tài nguyên.",
+        "Người nghèo chửi nó.",
+        "Người khôn đứng đúng chỗ trong nó."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.21.00.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.21.00.png",
+      "text": "VI.RED TEAM — CAI BAY PHO BIEN\ns {Hoc automation quá sớm\ns2 So mình với senior QA\n« > Chờ “đủ giỏi\"\n7° Thị trường không trả tiền cho “tiềm năng” — trả cho bug tìm được.",
+      "quotes": [
+        "VI.RED TEAM — CAI BAY PHO BIEN",
+        "s {Hoc automation quá sớm",
+        "s2 So mình với senior QA",
+        "7° Thị trường không trả tiền cho “tiềm năng” — trả cho bug tìm được."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.21.32.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.21.32.png",
+      "text": "n2 0/000 HE RIT Wi Meindl ME LIT ES REE MEN ee.\nVII. CÂU KET LOI\nKhông cần giỏi hơn người Mỹ.\nChỉ cần chịu làm việc họ lười làm.\nChênh lệch tiền tệ sẽ làm phần còn lại.\n= DI ÍC{~^ KE TIED (CLHOÀM 1)",
+      "quotes": [
+        "n2 0/000 HE RIT Wi Meindl ME LIT ES REE MEN ee.",
+        "Không cần giỏi hơn người Mỹ.",
+        "Chỉ cần chịu làm việc họ lười làm.",
+        "Chênh lệch tiền tệ sẽ làm phần còn lại.",
+        "= DI ÍC{~^ KE TIED (CLHOÀM 1)"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.27.01.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.27.01.png",
+      "text": "@ BAT CONG THONG TIN & TỐC ĐỘ = 4\nThực tế\ns Thông tin:\ns Người đọc tiếng Việt -> chậm 6-18 tháng\ns Người đọc tiếng Anh > đi trước\ns Nhiều ngành:\ns Tool\ns AI\ns SaaS\ns Automation\n¬ đã chín ở Mỹ, còn sơ khai ở VN\n7£ Người thắng ở VN hiện nay = người “copy có chọn lọc + bản địa hóa”\n'ø' Đứng đúng pha\ns Theo trend quốc tế\ns Ap dụng vào ngách VN / bán cho nước ngoài",
+      "quotes": [
+        "@ BAT CONG THONG TIN & TỐC ĐỘ = 4",
+        "s Người đọc tiếng Việt -> chậm 6-18 tháng",
+        "s Người đọc tiếng Anh > đi trước",
+        "¬ đã chín ở Mỹ, còn sơ khai ở VN",
+        "7£ Người thắng ở VN hiện nay = người “copy có chọn lọc + bản địa hóa”",
+        "s Theo trend quốc tế",
+        "s Ap dụng vào ngách VN / bán cho nước ngoài"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.27.49.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.27.49.png",
+      "text": "@ BAT CÔNG GIUA “BANG CAP” & “NĂNG LỰC ĐO ĐƯỢC\"\nThực tế\ns Bằng cấp:\ns Giá trị giảm\ns Doanh nghiệp (đặc biệt nước ngoài):\ns Quan tâm bạn làm được gì - output gì\nA ÕVN:\ns Người học nhiều > thu nhập thấp\ns Người có skill cụ thể -> thu nhập vượt trần xã hội\n© Đứng đúng pha\n« Tậptrung:\ns Portfolio\ns Output\ns Không chạy theo danh xưng",
+      "quotes": [
+        "@ BAT CÔNG GIUA “BANG CAP” & “NĂNG LỰC ĐO ĐƯỢC\"",
+        "s Doanh nghiệp (đặc biệt nước ngoài):",
+        "s Quan tâm bạn làm được gì - output gì",
+        "s Người học nhiều > thu nhập thấp",
+        "s Người có skill cụ thể -> thu nhập vượt trần xã hội",
+        "s Không chạy theo danh xưng"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.32.44.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.32.44.png",
+      "text": "1.7 DAI XVAVINXV7 INVATIVI VV VIN E HIEEIVI NUVI ZITA TTA kZ/VI N7\nØ9 Bất công giữa “luật có hiệu lực” và “luật được thực thi” 2\nThực tế VN\ns Luật ra > thực thi chậm - không đồng đều\ns Doanh nghiệp lớn biết trước\ns Cá nhân thì... không để ý\nĐòn bẩy\n«Ai hiểu sớm > điều chỉnh hành vi sớm\ne Vídụ:\n» Thuế\ns Kinh doanh online\ns Nền tảng số\n7£ Người thắng không né luật — ho di trước thời điểm luật siết.",
+      "quotes": [
+        "1.7 DAI XVAVINXV7 INVATIVI VV VIN E HIEEIVI NUVI ZITA TTA kZ/VI N7",
+        "Ø9 Bất công giữa “luật có hiệu lực” và “luật được thực thi” 2",
+        "s Luật ra > thực thi chậm - không đồng đều",
+        "s Doanh nghiệp lớn biết trước",
+        "s Cá nhân thì... không để ý",
+        "«Ai hiểu sớm > điều chỉnh hành vi sớm",
+        "s Kinh doanh online",
+        "7£ Người thắng không né luật — ho di trước thời điểm luật siết."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.33.31.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.33.31.png",
+      "text": "@ Bất công giữa “nền kinh tế chính thức” và “kinh tế nền tảng” ®\n» Kinh tế chính thức:\ns Thủ tục\n» Thuế\ns Chậm\ns Kinh tế nền tảng:\ns Freelance\ns Remote\ns Creator\ns Micro-service\n7£ Rất nhiều dòng tiền USD đi vào VN mà không ai thống kê đủ.",
+      "quotes": [
+        "@ Bất công giữa “nền kinh tế chính thức” và “kinh tế nền tảng” ®",
+        "» Kinh tế chính thức:",
+        "s Kinh tế nền tảng:",
+        "7£ Rất nhiều dòng tiền USD đi vào VN mà không ai thống kê đủ."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.33.36.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.33.36.png",
+      "text": "@ Bất công giữa “nền kinh tế chính thức” và “kinh tế nền tảng” ®\n» Kinh tế chính thức:\ns Thủ tục\n» Thuế\ns Chậm\ns Kinh tế nền tảng:\ns Freelance\ns Remote\ns Creator\ns Micro-service\n7£ Rất nhiều dòng tiền USD đi vào VN mà không ai thống kê đủ.\ns- Người khai thác:\ns Nhỏ\ns Phân tán\ns Linh hoạt",
+      "quotes": [
+        "@ Bất công giữa “nền kinh tế chính thức” và “kinh tế nền tảng” ®",
+        "» Kinh tế chính thức:",
+        "s Kinh tế nền tảng:",
+        "7£ Rất nhiều dòng tiền USD đi vào VN mà không ai thống kê đủ.",
+        "s- Người khai thác:"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.34.34.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.34.34.png",
+      "text": "@ Bất công về “tiêu chuẩn chất lượng” ÑÑ\nSự thật đau\n\ns Chuẩn VN thấp hơn chuẩn quốc tế\n\ns Nhưng giá dich vụ lại không thấp tương xứng\n7£ Nếu bạn làm theo chuẩn quốc tế ở VN:\n\ns Bạn nổi bật\n\ns Ít cạnh tranh\n\ns Được trả cao bất thường\nVí dụ:\n\n«QA report chuẩn\n\ns UX research bài bản\n\ns Documentation rõ ràng",
+      "quotes": [
+        "@ Bất công về “tiêu chuẩn chất lượng” ÑÑ",
+        "s Chuẩn VN thấp hơn chuẩn quốc tế",
+        "s Nhưng giá dich vụ lại không thấp tương xứng",
+        "7£ Nếu bạn làm theo chuẩn quốc tế ở VN:",
+        "s Được trả cao bất thường",
+        "s UX research bài bản",
+        "s Documentation rõ ràng"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.44.21.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.44.21.png",
+      "text": "Ø Bất công giữa “người giỏi nhưng im lặng” và “người trung bình nhưng biết trình\nbày” ®‹\ns Rất nhiều người giỏi & VN:\ns Không viết\ns Không chia sẻ\ns Không đóng gói năng lực\n7£ Người thắng:\ns Không cần giỏi nhất\ns Chỉ cần diễn giải được giá trị\n« Đây là lý do:\ns Blog\ns Portfolio\ns Casestudy\n- tạo chênh lệch thu nhập lớn.",
+      "quotes": [
+        "Ø Bất công giữa “người giỏi nhưng im lặng” và “người trung bình nhưng biết trình",
+        "s Rất nhiều người giỏi & VN:",
+        "s Không đóng gói năng lực",
+        "s Không cần giỏi nhất",
+        "s Chỉ cần diễn giải được giá trị",
+        "- tạo chênh lệch thu nhập lớn."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.44.38.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.44.38.png",
+      "text": "Ø Bất công giữa “người hiểu hệ thống” và “người chi hiểu nghề” ®\n» Đasố:\ns Họcnghề\ns Không học luật chơi của nghề\ns Một số ít:\ns Hiểu cách:\ns Định giá\ns Bán\ns Đàm phán\ns Scale\n7© Thu nhập cao không đến từ tay nghề — mà từ vị trí trong chuỗi giá trị.",
+      "quotes": [
+        "Ø Bất công giữa “người hiểu hệ thống” và “người chi hiểu nghề” ®",
+        "s Không học luật chơi của nghề",
+        "7© Thu nhập cao không đến từ tay nghề — mà từ vị trí trong chuỗi giá trị."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.44.57.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.44.57.png",
+      "text": "[© Bất công về “thời gian rảnh bị lãng phí” X\ns 2-4tiếng/ngày:\n» Lướt\ns Giải trí\ns Người khác:\ns Dùng để:\n«Build skill\ns Build asset\ns Build network\n\"VN có thời gian rảnh rẻ, nhưng rất ít người dùng nó làm tài san.",
+      "quotes": [
+        "[© Bất công về “thời gian rảnh bị lãng phí” X",
+        "\"VN có thời gian rảnh rẻ, nhưng rất ít người dùng nó làm tài san."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.46.11.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.46.11.png",
+      "text": "24 VIN VỤ UHIVIE gldil Talli Te, PMIMI fal IL LUUMUI WUT LI lal tat ogarit.\n# Bất công giữa “người nghĩ theo năm” và “người nghĩ theo thập kỷ” JØ\n» Đasố:\ns Nghĩ tháng này, năm nay\ns Người thắng:\n» Nghĩ:\ns Ky năng này 5-10 năm còn dùng không?\ns Chu kỳ này đang ở đầu hay cuối?\n7£ Chu kỳ hiện tại thưởng cho tầm nhìn dài + hành động sớm.",
+      "quotes": [
+        "24 VIN VỤ UHIVIE gldil Talli Te, PMIMI fal IL LUUMUI WUT LI lal tat ogarit.",
+        "# Bất công giữa “người nghĩ theo năm” và “người nghĩ theo thập kỷ” JØ",
+        "s Nghĩ tháng này, năm nay",
+        "s Ky năng này 5-10 năm còn dùng không?",
+        "s Chu kỳ này đang ở đầu hay cuối?",
+        "7£ Chu kỳ hiện tại thưởng cho tầm nhìn dài + hành động sớm."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 01.59.56.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 01.59.56.png",
+      "text": "LTEOLAGEINOICINDUA NOI ME (RUT LAI, AMVINO TU TEIN\n® Nikola Tesla - TƯ DUY CUA TESLA\n“Thế giới là năng lượng = tần số - dao động”\nDiễn giải hiện đại:\ns Mọi hệ thống đều có:\n* pattern\n» nhiễu\n° điểm mất ổn định\nTesla không bán phát minh -> ông nhìn hệ thống vô hình chỉ phối thế giới.\n® Albert Einstein — TƯ DUY CUA EINSTEIN\n“Vấn đề không nằm ở dữ kiện, mà ở khung tham chiếu”\ns Cùng một hiện tượng\ns Đổi khung nhìn > kết luận khác hoàn toàn\n7£ Einstein không giải bài toán > ông đổi cách nhìn bài toán.",
+      "quotes": [
+        "LTEOLAGEINOICINDUA NOI ME (RUT LAI, AMVINO TU TEIN",
+        "® Nikola Tesla - TƯ DUY CUA TESLA",
+        "“Thế giới là năng lượng = tần số - dao động”",
+        "Diễn giải hiện đại:",
+        "s Mọi hệ thống đều có:",
+        "° điểm mất ổn định",
+        "Tesla không bán phát minh -> ông nhìn hệ thống vô hình chỉ phối thế giới.",
+        "® Albert Einstein — TƯ DUY CUA EINSTEIN"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-01 at 02.16.36.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-01 at 02.16.36.png",
+      "text": "NO là Kha hang nh thay trdoc 1 DƯỢC Ø aung nol ma nguol Khác mu.”\nNếu bạn muốn, bước tiếp theo tôi có thé làm rất cụ thé (không triết):\nl8 Liệt kê 10 tín hiệu sập hệ thống ma founder Mỹ sợ nhất\nlØ Dạy bạn cách nói ra 1 câu khiến họ lập tức trả tiền\nB® Thiết kế 1 persona nghề nghiệp khiến bạn không thể bị thay thế\nChọn 1 số.\nỶỡễÀỪ",
+      "quotes": [
+        "NO là Kha hang nh thay trdoc 1 DƯỢC Ø aung nol ma nguol Khác mu.”",
+        "Nếu bạn muốn, bước tiếp theo tôi có thé làm rất cụ thé (không triết):",
+        "l8 Liệt kê 10 tín hiệu sập hệ thống ma founder Mỹ sợ nhất",
+        "lØ Dạy bạn cách nói ra 1 câu khiến họ lập tức trả tiền",
+        "B® Thiết kế 1 persona nghề nghiệp khiến bạn không thể bị thay thế"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-02 at 11.57.27.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-02 at 11.57.27.png",
+      "text": "iia ia 1H MMI gv ny dat tut 1H1QU.\n\nĐầu tư thực chất xoay quanh những việc lặp đi lặp lại:\n* quản trị vốn\n\n* quản trị tâm lý\n\n* nhận diện rủi ro\n\n* quản trị kỳ vọng\n\n* kỷ luật thực thi\n\n* hệ thống học & sửa sai\n\nAi có kế hoạch rõ ràng cho những điều này\n\nngười đó có lợi thế dài hạn.",
+      "quotes": [
+        "iia ia 1H MMI gv ny dat tut 1H1QU.",
+        "Đầu tư thực chất xoay quanh những việc lặp đi lặp lại:",
+        "* nhận diện rủi ro",
+        "* quản trị kỳ vọng",
+        "* kỷ luật thực thi",
+        "* hệ thống học & sửa sai",
+        "Ai có kế hoạch rõ ràng cho những điều này",
+        "người đó có lợi thế dài hạn."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-02 at 14.12.37.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-02 at 14.12.37.png",
+      "text": "VI. BAN ĐỒ HANH ĐỘNG 80/20 (CÁ NHÂN)\nNÊN\n\n+ Xây kỹ năng meta (dịch hệ thiết kế khung)\n\n+ Có 2 nguồn thu (1 trong hệ =1 ngoài hộ.\n\n+ Tích ly tài sản học được (kỹ năng, network, P)\n7 TRÁNH\n\n+ Đặt cược tất tay vào 1 narrative\n\n+ Nghễ chỉ sống nhờ trung gian\n\n+ Theo sóng mà không hiểu chu kỳ",
+      "quotes": [
+        "VI. BAN ĐỒ HANH ĐỘNG 80/20 (CÁ NHÂN)",
+        "+ Xây kỹ năng meta (dịch hệ thiết kế khung)",
+        "+ Có 2 nguồn thu (1 trong hệ =1 ngoài hộ.",
+        "+ Tích ly tài sản học được (kỹ năng, network, P)",
+        "+ Đặt cược tất tay vào 1 narrative",
+        "+ Nghễ chỉ sống nhờ trung gian",
+        "+ Theo sóng mà không hiểu chu kỳ"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-03 at 23.19.39.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-03 at 23.19.39.png",
+      "text": "1s 1m 5m 15m 1h 4h 1d 1W. ~ Ú | Z4 = BD 8 & 6S Ì. Giá gần nhất v TradingView ~ [# | Giá(USDT)Số(BTC) Téng (BTC)\n77.2471 000847 0,76726\nT\n_I_ @BTC/USDT- 1W - OKX 076.978,0 H79.335,5 L74.612,0 C77.234,9 +256,9 (+0.33%) 77.245,0 0,00001 0,76079\n[ \\ 77.242,8 014171 0,76078\nJ il | 120.000,0 | 77.2419 0,02000  0,61907\n| hy ! 772415 0,00001 0,59907\n— | | 77.241,0 0,027 0,5990\n= 0.0002 PNL 5.4458 241, 02700 059906\n| \\ | 99998 77.240,9 005454 0,57206\nJas | ih | 77.238,0 029164 0,51752\no— | I 4F 77237, 019439  0,22588\npy SE Ee Es Tro RR NHI ei SOHO 77.2350 003149 0,03149\n1\nod Í ih | | 77.234,9 | 57716153\n--1L--- a i TT |\nI | | | ! 77.2349 037247 0,37247\nT | | | il J ' 77.234,1 0,08085 ~~ 0,45332\n| | li |) ; 772340 021688  0,67020\n® fl L hải 40.000,0\n| li lAI l 77.233,0 002700 0,69720\n— i I Ml 77.232,0 0,02700  0,72420\n& J Wi Hi 200000 | 772316 000259 0,72679\n£2 và 772303 0,10000  0,82679\nOF 77.230,2 046032  1,28711\n— 2021 2022 2023 2024 2025 23 Thang Hai '26 2027 2028 2029 © 772301 0,01008 1,29719\nTN h s=s s=",
+      "quotes": [
+        "1s 1m 5m 15m 1h 4h 1d 1W. ~ Ú | Z4 = BD 8 & 6S Ì. Giá gần nhất v TradingView ~ [# | Giá(USDT)Số(BTC) Téng (BTC)",
+        "77.2471 000847 0,76726",
+        "_I_ @BTC/USDT- 1W - OKX 076.978,0 H79.335,5 L74.612,0 C77.234,9 +256,9 (+0.33%) 77.245,0 0,00001 0,76079",
+        "[ \\ 77.242,8 014171 0,76078",
+        "J il | 120.000,0 | 77.2419 0,02000  0,61907",
+        "| hy ! 772415 0,00001 0,59907",
+        "— | | 77.241,0 0,027 0,5990",
+        "= 0.0002 PNL 5.4458 241, 02700 059906"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-03 at 23.36.04.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-03 at 23.36.04.png",
+      "text": "@ REI LUAN NGAN\nCửa sổ mua BTC tốt nhất năm 2027: Tháng 6 > Tháng 9/2027 (xác suất cao nhất).\nKhông phải vì mê tín, mà vì chu kỳ + hành vi thị trường lặp lại.",
+      "quotes": [
+        "Cửa sổ mua BTC tốt nhất năm 2027: Tháng 6 > Tháng 9/2027 (xác suất cao nhất).",
+        "Không phải vì mê tín, mà vì chu kỳ + hành vi thị trường lặp lại."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-04 at 00.08.49.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-04 at 00.08.49.png",
+      "text": "7£ Vai trò: ON ĐỊNH + GIỮ NHỊP\nMM TONG KẾT PHAN BO\nHé M3 Ty trong Vai trò (a)\nHa ting HHV 30% Đi trước GDP\nNăng lượng GAS 25% Xương sống\nSản xuất HPG 25% Khuếch dai\nCông nghệ FPT 20% On định\nTổng 100%\ni - - nN ”",
+      "quotes": [
+        "7£ Vai trò: ON ĐỊNH + GIỮ NHỊP",
+        "MM TONG KẾT PHAN BO",
+        "Hé M3 Ty trong Vai trò (a)",
+        "Ha ting HHV 30% Đi trước GDP",
+        "Năng lượng GAS 25% Xương sống",
+        "Sản xuất HPG 25% Khuếch dai",
+        "Công nghệ FPT 20% On định"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-04 at 00.11.00.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-04 at 00.11.00.png",
+      "text": "MM TONG KET PHAN BO\n\nHé M3 Ty trong Vai trò (a)\nHa tầng HHV 30% Đi trước GDP.\n\nNăng lượng GAS 25% Xương sống\n\nSản xuất HPG 25% Khuếch dai\n\nCông nghệ FPT 20% On định\n\nTổng 100%",
+      "quotes": [
+        "MM TONG KET PHAN BO",
+        "Hé M3 Ty trong Vai trò (a)",
+        "Ha tầng HHV 30% Đi trước GDP.",
+        "Năng lượng GAS 25% Xương sống",
+        "Sản xuất HPG 25% Khuếch dai",
+        "Công nghệ FPT 20% On định"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-04 at 00.31.10.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-04 at 00.31.10.png",
+      "text": "Fnien Dân Qung cua cau nay ia:\nMuốn lương 10.000 USD,\nhãy kiểm soát sự chú ý của mình\nvà biến nó thành giá trị có thể bán.",
+      "quotes": [
+        "Fnien Dân Qung cua cau nay ia:",
+        "Muốn lương 10.000 USD,",
+        "hãy kiểm soát sự chú ý của mình",
+        "và biến nó thành giá trị có thể bán."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-04 at 00.31.40.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-04 at 00.31.40.png",
+      "text": "NWI INR WE AEN 8 BA NỐH ĐA? ý\nNếu hôm nay bạn không tạo ra thứ gì có thể bán,\nthì mọi “nhận thức cao” chỉ là tiêu khiển trí tuệ.",
+      "quotes": [
+        "NWI INR WE AEN 8 BA NỐH ĐA? ý",
+        "Nếu hôm nay bạn không tạo ra thứ gì có thể bán,",
+        "thì mọi “nhận thức cao” chỉ là tiêu khiển trí tuệ."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-04 at 14.03.45.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-04 at 14.03.45.png",
+      "text": "Ø5 INEIN TFT XVVM Với NEV DAN II, TLEININ TVIHNH, ©\n® Khuyến nghị +H\n« IELTS Academic hoặc General — mục tiêu 6.0\n+ Dùng được:\n* Visa\ns Học\ns Địnhcư\n» Hồ sơ quốc tế\n« Việt Nam thi rất thuận tiện\nNZ",
+      "quotes": [
+        "Ø5 INEIN TFT XVVM Với NEV DAN II, TLEININ TVIHNH, ©",
+        "« IELTS Academic hoặc General — mục tiêu 6.0",
+        "« Việt Nam thi rất thuận tiện"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-04 at 14.03.55.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-04 at 14.03.55.png",
+      "text": "& Nếu bạn xác định EU lâu dai\n« Cambridge B2 hoặc C1\ns Không hết hạn\ns Được EU đánh giá cao\n° Thể hiện “ở lại lâu dài”\nNN",
+      "quotes": [
+        "& Nếu bạn xác định EU lâu dai",
+        "« Cambridge B2 hoặc C1",
+        "s Được EU đánh giá cao",
+        "° Thể hiện “ở lại lâu dài”"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-04 at 15.26.58.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-04 at 15.26.58.png",
+      "text": "® Ø9 “Độ thông minh cấp 3” — KIEN TRÚC 3 LỚP (ELITE)\nless (Ø Copy code\nLỚP 1: Pháp Lý & tiền (Estonia — EU company)\nLỚP 2: Cư trú & hộ chiếu (Portugal — EU)\nLỚP 3: Crypto-native fallback (El Salvador / BTC world)\nTai sao đây là cấp cao nhất?\ns EUổn định - base\ns Estonia > tài chính & doanh nghiệp\n° El Salvador > lối thoát khi hệ fiat rung lắc\n«Ban không cược tất cả vào 1 hệ thống.\nMM sO THANG “ĐỘ THONG MINH\" (MECE)\nMô hình Độ thông minh 8)\nChi Nhat/Han/Uc *\nChi Portugal xxx*\nEstonia + Portugal xxxx**\nEstonia + Portugal + BTC country M xxxxx*",
+      "quotes": [
+        "® Ø9 “Độ thông minh cấp 3” — KIEN TRÚC 3 LỚP (ELITE)",
+        "LỚP 1: Pháp Lý & tiền (Estonia — EU company)",
+        "LỚP 2: Cư trú & hộ chiếu (Portugal — EU)",
+        "LỚP 3: Crypto-native fallback (El Salvador / BTC world)",
+        "Tai sao đây là cấp cao nhất?",
+        "s EUổn định - base",
+        "s Estonia > tài chính & doanh nghiệp",
+        "° El Salvador > lối thoát khi hệ fiat rung lắc"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-04 at 15.34.59.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-04 at 15.34.59.png",
+      "text": "MM sO THANG “ĐỘ THONG MINH\" (MECE)\n\nMô hình Độ thông minh 8)\nChi Nhật/Hàn/Úc *\n\nChi Portugal xxx*\n\nEstonia + Portugal xxxx**\n\nEstonia + Portugal + BTC country xxx*xx*x*",
+      "quotes": [
+        "MM sO THANG “ĐỘ THONG MINH\" (MECE)",
+        "Mô hình Độ thông minh 8)",
+        "Estonia + Portugal xxxx**",
+        "Estonia + Portugal + BTC country xxx*xx*x*"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-04 at 15.37.53.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-04 at 15.37.53.png",
+      "text": "œ CÂU CHOT (bạn nên giữ trong đầu)\n\nNgười yếu hỏi: “ð đâu an toàn?”\n\nNgười thông minh hỏi: “nếu lực đổi, tôi phân tán thế nào?”\nBạn đang hỏi câu thứ hai.\nĐó là dấu hiệu đã chạm tầng tư duy hệ thống. v",
+      "quotes": [
+        "œ CÂU CHOT (bạn nên giữ trong đầu)",
+        "Người yếu hỏi: “ð đâu an toàn?”",
+        "Người thông minh hỏi: “nếu lực đổi, tôi phân tán thế nào?”",
+        "Bạn đang hỏi câu thứ hai.",
+        "Đó là dấu hiệu đã chạm tầng tư duy hệ thống. v"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-04 at 16.51.24.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-04 at 16.51.24.png",
+      "text": "Ø Bản đồ ánh xa (rất quan trong)\n\nVí dụ vật lý Trong não Trong tư duy\n\nGõ phím Kỹ năng tự động Luồng nền (Background)\nNhìn màn hình Ý thức kiểm soát Luồng chính (Foreground)\nSửa lỗi gõ Phản hồi tức thì Feedback loop\n\nKhông nghĩ cách gõ Giải phóng tài nguyên Cho phép luồng khác tồn tại\n« Đa luồng không sinh ra từ cố gắng,\n\n®- Đa luồng sinh ra từ huấn luyện tự động hóa",
+      "quotes": [
+        "Ø Bản đồ ánh xa (rất quan trong)",
+        "Ví dụ vật lý Trong não Trong tư duy",
+        "Gõ phím Kỹ năng tự động Luồng nền (Background)",
+        "Nhìn màn hình Ý thức kiểm soát Luồng chính (Foreground)",
+        "Sửa lỗi gõ Phản hồi tức thì Feedback loop",
+        "Không nghĩ cách gõ Giải phóng tài nguyên Cho phép luồng khác tồn tại",
+        "« Đa luồng không sinh ra từ cố gắng,",
+        "®- Đa luồng sinh ra từ huấn luyện tự động hóa"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-05 at 14.54.31.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-05 at 14.54.31.png",
+      "text": "999 Vì UU LUUT at Sat iu LS)\nkotlin (9 Copy code\nrunBlocking {\nlaunch {\nprintln(\"C1 start\")\ndelay (1000)\nprinttn(\"C1 resume\")\n}\nlaunch {\nprinttn(\"C2 start\")\ndelay(500)\nprinttn(\"C2 resume\")\n}\nlaunch {\nprinttn(\"C3 start\")\n}\n}\nOutput có thể là:\ntext (Ø Copy code\nC1 start\nC2 start\nC3 start\nC2 resume\nC1 resume\nv\n7© Chỉ 1 thread, nhưng 3 coroutine đều tiến triển.\nPy",
+      "quotes": [
+        "999 Vì UU LUUT at Sat iu LS)",
+        "kotlin (9 Copy code",
+        "println(\"C1 start\")",
+        "printtn(\"C1 resume\")",
+        "printtn(\"C2 start\")",
+        "printtn(\"C2 resume\")",
+        "printtn(\"C3 start\")",
+        "7© Chỉ 1 thread, nhưng 3 coroutine đều tiến triển."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-06 at 15.21.33.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-06 at 15.21.33.png",
+      "text": "@ “We are at the beginning of a new industrial revolution.”\nChúng ta đang ở điểm khởi đầu của một cuộc cách mạng công nghiệp mới.\nHuang nói điều này trước khi AI bùng nồ đại trà.\ns Cách mạng lần này:\ns Không cần nhà máy\ns Không cần đất đai\ns Cần compute + data + model\n® Một cá nhân có thể = một doanh nghiệp.",
+      "quotes": [
+        "@ “We are at the beginning of a new industrial revolution.”",
+        "Chúng ta đang ở điểm khởi đầu của một cuộc cách mạng công nghiệp mới.",
+        "Huang nói điều này trước khi AI bùng nồ đại trà.",
+        "s Cách mạng lần này:",
+        "s Không cần nhà máy",
+        "s Không cần đất đai",
+        "s Cần compute + data + model",
+        "® Một cá nhân có thể = một doanh nghiệp."
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-06 at 15.27.33.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-06 at 15.27.33.png",
+      "text": "4 4 ˆ ky ẤÁ\n\n0 AI Agent hoá cá nhân (Personal Al Agent Economy) — Chu kỷ SO 1\nBản chất: AI không còn là tool > trở thành agent tự chạy\n\ns Doanh nghiệp nhỏ không thuê nhân sự, họ thuê agent\n\ns Cá nhân = operator + designer của agent\nNút thắt bạn chiếm được:\n\nNgười thiết kế — tinh chỉnh - bản địa hoá agent cho người không biết Al\n\n$ Việc làm NGAY (0-30 ngày):\n\ns Hoc prompt -> workflow > agent loop\n\ns Lam 1 agent giải quyết 1 vấn đề thật\n\ns Đóng gói thành service",
+      "quotes": [
+        "0 AI Agent hoá cá nhân (Personal Al Agent Economy) — Chu kỷ SO 1",
+        "Bản chất: AI không còn là tool > trở thành agent tự chạy",
+        "s Doanh nghiệp nhỏ không thuê nhân sự, họ thuê agent",
+        "s Cá nhân = operator + designer của agent",
+        "Nút thắt bạn chiếm được:",
+        "Người thiết kế — tinh chỉnh - bản địa hoá agent cho người không biết Al",
+        "$ Việc làm NGAY (0-30 ngày):",
+        "s Hoc prompt -> workflow > agent loop"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-10 at 16.17.25.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-10 at 16.17.25.png",
+      "text": "vs. 09cketsteitesôroupi9 = Optional present IFMGUALLL vos paylisa?. iteld. takelf { payiien?.type == Constants. MyRecors\n5 imine it sent dT),\nHN\nko nEeoyobeosbosoe mi\nRi] peti\n© mothe 3",
+      "quotes": [
+        "vs. 09cketsteitesôroupi9 = Optional present IFMGUALLL vos paylisa?. iteld. takelf { payiien?.type == Constants. MyRecors",
+        "5 imine it sent dT),",
+        "ko nEeoyobeosbosoe mi"
+      ]
+    },
+    {
+      "file": "Screenshot 2026-02-12 at 16.16.26.png",
+      "path": "/Users/manh.nguyen/Desktop/nono/Screenshot 2026-02-12 at 16.16.26.png",
+      "text": "i > TL  < | side-by-side viewer » Donotignore v | Highlightwords v X TA ©& 7? 1 difference, O included 83, +, ®%\n= ” @©83484eaa gradle.properties [J Current version ~ Name\nFrings configured through the IDE *will override* ings configured through the IDE *will override \"om on\nSa ings specified in this file. IS specified in this file.\nResource details on how to configure your build environment visit tails on how to configure your build environment visit _ Mediun\nMEER? Ww .gradle.org/docs/current/userguide/build environment. html gradle.org/docs/current/userquide/build_environment.html © Android\n5 the JVM arguments used for the daemon process. ‘he JVM arguments used for the daemon process.\nTà Hg is particularly useful for tweaking memory settings. | is particularly useful for tweaking memory settings. =\nvn .Jvmargs=-Xmx8g -Dfile.encoding=UTF-8 -XX:+HeapDumpOnOutOfMer >9 9 (J 'margs=-Xmx8g -XX:MaxMetaspaceSize=3g -Df11e.encoding=UTF-8 |\n5 the JVM arguments used for the daemon process. ‘he JVM arguments used for the daemon process.\noes non. jvmargs=-Xmx4g -XX:+HeapDumpOnOutOfMemoryError i.jvmargs=-Xmx4g -XX:+HeapDumpOnOutOfMemoryError\nInspastion ing is particularly useful for tweaking memory settings. | is particularly useful for tweaking memory settings.\n)=true ‘rue\nT .workers.max=4 rkers.max=4\nBuild “igured, Gradle will run in incubating parallel mode. ured, Gradle will run in incubating parallel mode.\n=¬i9n should only be used with decoupled projects. More detail: ¡ should only be used with decoupled projects. More details,",
+      "quotes": [
+        "Frings configured through the IDE *will override* ings configured through the IDE *will override \"om on",
+        "Sa ings specified in this file. IS specified in this file.",
+        "5 the JVM arguments used for the daemon process. ‘he JVM arguments used for the daemon process.",
+        "vn .Jvmargs=-Xmx8g -Dfile.encoding=UTF-8 -XX:+HeapDumpOnOutOfMer >9 9 (J 'margs=-Xmx8g -XX:MaxMetaspaceSize=3g -Df11e.encoding=UTF-8 |",
+        "5 the JVM arguments used for the daemon process. ‘he JVM arguments used for the daemon process.",
+        "oes non. jvmargs=-Xmx4g -XX:+HeapDumpOnOutOfMemoryError i.jvmargs=-Xmx4g -XX:+HeapDumpOnOutOfMemoryError",
+        "T .workers.max=4 rkers.max=4",
+        "=¬i9n should only be used with decoupled projects. More detail: ¡ should only be used with decoupled projects. More details,"
+      ]
+    }
+  ]
+}
