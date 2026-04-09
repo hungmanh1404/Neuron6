@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "remind": "node remind.js"
+    "remind": "node remind.js",
+    "test:noti": "node test-noti.js",
+    "test:noti:all": "node test-noti.js --all"
   },
   "dependencies": {
     "axios": "^1.7.2"

@@ -491,6 +491,159 @@
         box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
         font-size: clamp(12px, 0.6vw + 10px, 13px);
       }
+      /* PUBG-ish HUD skin (yellow tactical) */
+      .spacetime.hud {
+        border-color: rgba(250, 204, 21, 0.22);
+        background:
+          radial-gradient(circle at 18% 0%, rgba(250, 204, 21, 0.09), transparent 52%),
+          radial-gradient(circle at 90% 12%, rgba(56, 189, 248, 0.08), transparent 55%),
+          radial-gradient(circle at top, rgba(2, 6, 23, 0.98) 0, rgba(2, 6, 23, 0.98) 60%, rgba(2, 6, 23, 0.98) 100%);
+        box-shadow:
+          0 22px 55px rgba(2, 6, 23, 0.88),
+          0 0 0 1px rgba(250, 204, 21, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+      .spacetime.hud::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(250, 204, 21, 0.12), transparent 24%),
+          radial-gradient(circle at 22% 0%, rgba(248, 250, 252, 0.06), transparent 55%);
+        pointer-events: none;
+        opacity: 0.9;
+      }
+      .spacetime.hud::after {
+        content: "";
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        top: 10px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(250, 204, 21, 0.9), rgba(250, 204, 21, 0.25), rgba(56, 189, 248, 0.25));
+        opacity: 0.9;
+        pointer-events: none;
+      }
+      .spacetime.hud .spacetime-header strong {
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .spacetime.hud .spacetime-header span {
+        opacity: 0.92;
+      }
+      .spacetime.hud .spacetime-line {
+        background: linear-gradient(90deg, rgba(2, 6, 23, 0.8), rgba(30, 41, 59, 0.95), rgba(2, 6, 23, 0.8));
+        border: 1px solid rgba(250, 204, 21, 0.14);
+      }
+      .spacetime.hud .st-cycle {
+        border-color: rgba(250, 204, 21, 0.45);
+        background: rgba(250, 204, 21, 0.06);
+        box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.12), 0 0 18px rgba(250, 204, 21, 0.12);
+      }
+      .spacetime.hud .st-cycle.evening {
+        border-color: rgba(56, 189, 248, 0.45);
+        background: rgba(56, 189, 248, 0.05);
+        box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.12), 0 0 18px rgba(56, 189, 248, 0.12);
+      }
+      .spacetime.hud .st-cycle-label {
+        color: #facc15;
+        text-shadow: 0 0 18px rgba(250, 204, 21, 0.22);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-size: 11px;
+      }
+      .spacetime.hud .st-cycle.evening .st-cycle-label {
+        color: #7dd3fc;
+        text-shadow: 0 0 18px rgba(56, 189, 248, 0.22);
+      }
+      .spacetime.hud .st-notes {
+        gap: 10px;
+      }
+      .spacetime.hud .st-note {
+        position: relative;
+        padding: 10px 10px 10px 12px;
+        border-radius: 14px;
+        background: rgba(2, 6, 23, 0.62);
+        border: 1px solid rgba(250, 204, 21, 0.16);
+        box-shadow: 0 12px 28px rgba(2, 6, 23, 0.78);
+        overflow: hidden;
+      }
+      .spacetime.hud .st-note::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, rgba(250, 204, 21, 0.95), rgba(250, 204, 21, 0.18));
+        opacity: 0.95;
+      }
+      .spacetime.hud .st-note strong {
+        font-weight: 650;
+      }
+      .spacetime.hud .st-note:hover {
+        border-color: rgba(250, 204, 21, 0.32);
+      }
+      .spacetime.hud .st-note.is-now {
+        border-color: rgba(250, 204, 21, 0.55);
+        box-shadow:
+          0 0 0 1px rgba(250, 204, 21, 0.18),
+          0 0 26px rgba(250, 204, 21, 0.22),
+          0 22px 46px rgba(2, 6, 23, 0.9);
+        transform: translateY(-1px);
+      }
+      .spacetime.hud .st-note.is-now::before {
+        width: 6px;
+      }
+      .spacetime.hud .st-note.is-now::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(120deg, transparent 0%, rgba(250, 204, 21, 0.12) 35%, transparent 70%),
+          linear-gradient(180deg, rgba(250, 204, 21, 0.06), transparent 35%);
+        opacity: 0.85;
+        pointer-events: none;
+        animation: hud-sweep 1.8s ease-in-out infinite;
+        mix-blend-mode: screen;
+      }
+      .spacetime.hud .st-note.is-now strong {
+        color: #fde68a;
+        text-shadow: 0 0 18px rgba(250, 204, 21, 0.25);
+      }
+      .spacetime.hud .st-note.is-now {
+        animation: hud-pulse 1.6s ease-in-out infinite;
+      }
+      @keyframes hud-pulse {
+        0%,
+        100% {
+          filter: saturate(1) brightness(1);
+        }
+        50% {
+          filter: saturate(1.08) brightness(1.06);
+        }
+      }
+      @keyframes hud-sweep {
+        0% {
+          transform: translateX(-18%);
+          opacity: 0.25;
+        }
+        45% {
+          opacity: 0.9;
+        }
+        100% {
+          transform: translateX(18%);
+          opacity: 0.25;
+        }
+      }
+      @media (max-width: 900px) {
+        .spacetime.hud::after {
+          left: 10px;
+          right: 10px;
+        }
+      }
       .spacetime-header {
         display: flex;
         justify-content: space-between;
@@ -545,13 +698,9 @@
         pointer-events: none;
       }
       .st-cycle.morning {
-        left: 29%;
-        right: 56%;
         box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.3);
       }
       .st-cycle.evening {
-        left: 71%;
-        right: 11%;
         box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.3);
       }
       .st-cycle-label {
@@ -871,6 +1020,18 @@
           border-radius: 18px;
           align-items: flex-start;
         }
+        .st-cycle-label {
+          top: -26px;
+          font-size: 11px;
+          max-width: 74vw;
+          white-space: normal;
+          line-height: 1.15;
+          padding: 2px 6px;
+          border-radius: 999px;
+          background: rgba(2, 6, 23, 0.7);
+          border: 1px solid rgba(31, 41, 55, 0.85);
+          backdrop-filter: blur(6px);
+        }
       }
       @media (hover: none) {
         .step:hover {
@@ -890,6 +1051,235 @@
         .cosmic-arrow,
         .cosmic-cycle-center {
           animation: none !important;
+        }
+      }
+      /* ==== DAILY OPERATING SYSTEM (real-time) ==== */
+      .dos {
+        width: min(96vw, var(--page-max));
+        margin: 10px auto 0;
+        padding: clamp(14px, 3vw, 22px) clamp(12px, 3.2vw, 26px);
+        border-radius: clamp(22px, 4vw, 30px);
+        background: radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.09), transparent 52%),
+          radial-gradient(circle at 90% 10%, rgba(249, 115, 22, 0.08), transparent 55%),
+          radial-gradient(circle at top, #020617 0, #020617 60%, #020617 100%);
+        border: 1px solid rgba(148, 163, 184, 0.28);
+        box-shadow: 0 22px 50px rgba(15, 23, 42, 0.92);
+        overflow: hidden;
+        position: relative;
+      }
+      .dos::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 30% 0%, rgba(248, 250, 252, 0.08), transparent 55%);
+        opacity: 0.8;
+        pointer-events: none;
+      }
+      .dos-inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .dos-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .dos-title {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+      }
+      .dos-title h2 {
+        margin: 0;
+        font-size: clamp(14px, 1.1vw + 12px, 18px);
+        font-weight: 650;
+        letter-spacing: 0.02em;
+      }
+      .dos-title .dos-sub {
+        font-size: clamp(11px, 0.55vw + 9px, 12px);
+        color: var(--muted);
+        line-height: 1.35;
+      }
+      .dos-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .dos-btn {
+        appearance: none;
+        border: 1px solid rgba(75, 85, 99, 0.9);
+        background: rgba(2, 6, 23, 0.92);
+        color: var(--text);
+        padding: 7px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        user-select: none;
+      }
+      .dos-btn:hover {
+        transform: translateY(-1px);
+        border-color: rgba(248, 250, 252, 0.65);
+        box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
+      }
+      .dos-btn:active {
+        transform: translateY(0);
+      }
+      .dos-btn.primary {
+        border-color: rgba(56, 189, 248, 0.7);
+        box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.15);
+      }
+      .dos-btn.secondary {
+        border-color: rgba(129, 140, 248, 0.55);
+      }
+      .dos-progress {
+        position: relative;
+        width: 100%;
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(31, 41, 55, 0.9);
+        overflow: hidden;
+      }
+      .dos-progress > span {
+        position: absolute;
+        inset: 0;
+        width: 0%;
+        background: linear-gradient(90deg, rgba(56, 189, 248, 0.85), rgba(129, 140, 248, 0.8));
+        box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+        transition: width 350ms ease;
+      }
+      .dos-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 4px;
+      }
+      .dos-item {
+        display: grid;
+        grid-template-columns: 108px minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: center;
+        padding: 10px 12px;
+        border-radius: 16px;
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+      }
+      .dos-item[data-state="now"] {
+        border-color: rgba(248, 250, 252, 0.85);
+        background: radial-gradient(circle at 0% 0%, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
+        box-shadow:
+          0 0 0 1px rgba(148, 163, 184, 0.22),
+          0 0 22px rgba(56, 189, 248, 0.45),
+          0 18px 45px rgba(15, 23, 42, 0.95);
+        transform: translateY(-1px);
+      }
+      .dos-time {
+        font-size: 12px;
+        color: rgba(148, 163, 184, 0.95);
+        letter-spacing: 0.02em;
+        font-variant-numeric: tabular-nums;
+      }
+      .dos-main {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+      .dos-main strong {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.2;
+      }
+      .dos-rule {
+        font-size: 12px;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+      .dos-pill {
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        color: rgba(226, 232, 240, 0.9);
+        background: rgba(2, 6, 23, 0.7);
+        font-variant-numeric: tabular-nums;
+      }
+      .dos-pill.done {
+        background: rgba(34, 197, 94, 0.12);
+        border-color: rgba(34, 197, 94, 0.35);
+        color: #86efac;
+      }
+      .dos-pill.now {
+        background: rgba(59, 130, 246, 0.14);
+        border-color: rgba(56, 189, 248, 0.5);
+        color: #7dd3fc;
+      }
+      .dos-pill.next {
+        background: rgba(250, 204, 21, 0.12);
+        border-color: rgba(250, 204, 21, 0.32);
+        color: #fde68a;
+      }
+      .dos-pill.upcoming {
+        background: rgba(148, 163, 184, 0.12);
+        border-color: rgba(148, 163, 184, 0.28);
+        color: rgba(226, 232, 240, 0.78);
+      }
+      .dos-footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 4px;
+        padding-top: 10px;
+        border-top: 1px dashed rgba(75, 85, 99, 0.7);
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .dos-footer strong {
+        color: rgba(248, 250, 252, 0.92);
+        font-weight: 600;
+      }
+      .dos-defaults {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: 16px;
+        background: rgba(2, 6, 23, 0.7);
+        border: 1px solid rgba(31, 41, 55, 0.9);
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .dos-defaults strong {
+        color: rgba(248, 250, 252, 0.92);
+        font-weight: 600;
+      }
+      .dos-defaults ul {
+        margin: 8px 0 0;
+        padding-left: 16px;
+      }
+      .dos-defaults li {
+        margin: 4px 0;
+      }
+      @media (max-width: 640px) {
+        .dos-item {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          align-items: flex-start;
+        }
+        .dos-pill {
+          justify-self: flex-start;
         }
       }
     </style>
@@ -954,6 +1344,112 @@
               <strong>0</strong>
               <label>giây</label>
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="spacetime hud" aria-label="Đường thời gian spacetime một ngày của bạn" style="margin-top:12px;">
+        <div class="spacetime-header">
+          <div>
+            <strong>Spacetime HUD · Daily OS</strong>
+            <span>&middot; hệ quy chiếu: Đà Nẵng, Việt Nam (UTC+7)</span>
+          </div>
+          <span id="st-now-label"></span>
+        </div>
+        <div class="spacetime-track" id="spacetime-track">
+          <div class="spacetime-line">
+            <div class="st-seg early"></div>
+            <div class="st-seg morning"></div>
+            <div class="st-seg work"></div>
+            <div class="st-seg evening"></div>
+            <div class="st-seg night"></div>
+          </div>
+          <div class="st-cycle morning" data-start="05:00" data-end="07:30">
+            <span class="st-cycle-label">MORNING RITUAL (05:00–07:30)</span>
+          </div>
+          <div class="st-cycle evening" data-start="22:10" data-end="01:30">
+            <span class="st-cycle-label">NIGHT BUILD (22:10–01:30)</span>
+          </div>
+          <div class="st-dot" id="st-dot"></div>
+          <div class="st-time-labels">
+            <span>00:00</span>
+            <span>06:00</span>
+            <span>12:00</span>
+            <span>18:00</span>
+            <span>24:00</span>
+          </div>
+        </div>
+        <div class="st-notes" id="hud-notes">
+          <div class="st-note early" data-start="00:30" data-end="01:30">
+            <strong>🛡️ 00:30–01:30</strong>
+            Sleep protocol: đi ngủ cố định. Ưu tiên hơn mọi thứ.
+          </div>
+          <div class="st-note morning" data-start="05:00" data-end="07:30">
+            <strong>🪂 05:00–07:30</strong>
+            Wake → Prime → Deep Work #1 → Walk. Không phone 30’ đầu. Chỉ 1 task North Star.
+          </div>
+          <div class="st-note work" data-start="09:00" data-end="18:00">
+            <strong>🏢 09:00–18:00</strong>
+            Work (bắt buộc). Nếu có thể: chèn 1 block deep work trong giờ.
+          </div>
+          <div class="st-note evening" data-start="18:00" data-end="22:10">
+            <strong>🌇 18:00–22:10</strong>
+            Shutdown + review → connection (đi bộ/ăn tối, no screen khi ăn) → training + tắm.
+          </div>
+          <div class="st-note night" data-start="22:10" data-end="00:30">
+            <strong>🎮 22:10–00:30</strong>
+            Deep Work #2 / Build → Wind-down. Ship 1 phần nhỏ rồi hạ ánh sáng, đọc sách giấy.
+          </div>
+        </div>
+      </section>
+      <section class="dos" aria-label="Daily Operating System theo thời gian thực">
+        <div class="dos-inner">
+          <div class="dos-top">
+            <div class="dos-title">
+              <h2>📅 DAILY OPERATING SYSTEM (real-time)</h2>
+              <div class="dos-sub">
+                <strong>Command Center</strong><br />
+                North Star: Output → Skill → Income · Hành động trước cảm xúc.
+              </div>
+            </div>
+            <div class="dos-actions">
+              <button class="dos-btn primary" id="dos-start-focus" type="button">Start Focus 50m</button>
+              <button class="dos-btn secondary" id="dos-start-break" type="button">Break 10m</button>
+              <button class="dos-btn" id="dos-reset-timer" type="button">Reset</button>
+            </div>
+          </div>
+          <div class="dos-progress" aria-label="Tiến độ focus/break">
+            <span id="dos-progress-bar" style="width:0%"></span>
+          </div>
+          <div class="dos-list" id="dos-list" aria-label="Timeline lịch ngày"></div>
+          <div class="dos-footer">
+            <div id="dos-now-next">Now: <strong>—</strong> · Next: <strong>—</strong></div>
+            <div id="dos-focus-left">Focus: <strong>—</strong></div>
+          </div>
+          <div class="dos-defaults" aria-label="Default behaviors">
+            <strong>Default behaviors (không cần suy nghĩ)</strong>
+            <ul>
+              <li><strong>Wake</strong>: dậy 05:00 → nước + ánh sáng → không phone</li>
+              <li><strong>Deep Work</strong>: bắt đầu bằng 1 task duy nhất (North Star)</li>
+              <li><strong>Energy</strong>: tập + ngủ là “hạ tầng”, không mặc cả</li>
+              <li><strong>Shutdown</strong>: kết ngày bằng review 3 dòng</li>
+              <li><strong>Anti-drama</strong>: cảm xúc cao → pause 90s → viết ra → hành động nhỏ</li>
+              <li><strong>Rule giảm decision fatigue</strong>: 1-3-1 (1 North Star • 3 tasks phụ • 1 việc bỏ đi), Never miss twice (gãy 1 ngày → hôm sau chạy 80/20), Prep tonight (task đầu ngày + đồ tập)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="spacetime" aria-label="Daily Forecast 20:00" style="margin-top:10px;">
+        <div class="spacetime-header">
+          <div>
+            <strong>🎮 Daily Forecast (20:00)</strong>
+            <span>&middot; thần số học / chiêm tinh / tarot (giải trí) · “PUBG HUD vibe”</span>
+          </div>
+          <span id="forecast-now-label"></span>
+        </div>
+        <div class="st-notes" style="grid-template-columns: minmax(0, 1fr);">
+          <div class="st-note">
+            <strong id="forecast-title">—</strong>
+            <div id="forecast-body" style="white-space:pre-wrap; color: var(--muted); line-height:1.45; overflow-wrap:anywhere; word-break:break-word;"></div>
           </div>
         </div>
       </section>
@@ -1043,60 +1539,6 @@
           <strong>Sleep</strong>
           Trước 23:00 &middot; cho não “lên cơ” qua đêm
         </span>
-      </section>
-      <section class="spacetime" aria-label="Đường thời gian spacetime một ngày của bạn">
-        <div class="spacetime-header">
-          <div>
-            <strong>Spacetime ngày của Nguyễn Mạnh</strong>
-            <span>&middot; hệ quy chiếu: Đà Nẵng, Việt Nam (UTC+7)</span>
-          </div>
-          <span id="st-now-label"></span>
-        </div>
-        <div class="spacetime-track" id="spacetime-track">
-          <div class="spacetime-line">
-            <div class="st-seg early"></div>
-            <div class="st-seg morning"></div>
-            <div class="st-seg work"></div>
-            <div class="st-seg evening"></div>
-            <div class="st-seg night"></div>
-          </div>
-          <div class="st-cycle morning">
-            <span class="st-cycle-label">Vòng sáng: Focus → Flow (06:55–08:30)</span>
-          </div>
-          <div class="st-cycle evening">
-            <span class="st-cycle-label">Vòng tối: Focus → Flow → Diffuse (20:00–21:30)</span>
-          </div>
-          <div class="st-dot" id="st-dot"></div>
-          <div class="st-time-labels">
-            <span>00:00</span>
-            <span>06:00</span>
-            <span>12:00</span>
-            <span>18:00</span>
-            <span>24:00</span>
-          </div>
-        </div>
-        <div class="st-notes">
-          <div class="st-note early">
-            <strong>⏰ 04:44–06:55</strong>
-            Thức sớm (thỉnh thoảng). Nếu dậy được &amp; tỉnh: mini Focus 15–20 phút nhẹ.
-          </div>
-          <div class="st-note morning">
-            <strong>🌅 06:55–08:30</strong>
-            Cửa sổ vàng sáng. 1 vòng Focus → Flow nhỏ (30–45 phút) trước khi đi làm.
-          </div>
-          <div class="st-note work">
-            <strong>🏢 09:00–17:30</strong>
-            09:00–12:00 làm việc · 12:00–14:00 ăn &amp; ngủ trưa · 14:20–17:30 ca chiều.
-          </div>
-          <div class="st-note evening">
-            <strong>🌇 18:00–21:30</strong>
-            18:00–20:00 hồi sức (ăn, tắm, đi bộ ngắn) · 20:00–21:30 học nhẹ theo vòng Focus → Flow → Diffuse.
-          </div>
-          <div class="st-note night">
-            <strong>🌙 22:00–01:00</strong>
-            22:00–01:00 thân mật &amp; thư giãn. Sau đó ưu tiên Sleep để não chép file.
-          </div>
-        </div>
       </section>
       <section class="spacetime" aria-label="Lớp hành động & phản hồi" style="margin-top:12px;">
         <div class="spacetime-header">
@@ -1269,16 +1711,396 @@
         setInterval(update, 1000);
       })();
       (function () {
+        const listEl = document.getElementById("dos-list");
+        const nowNextEl = document.getElementById("dos-now-next");
+        const focusLeftEl = document.getElementById("dos-focus-left");
+        const progressBarEl = document.getElementById("dos-progress-bar");
+        const focusBtn = document.getElementById("dos-start-focus");
+        const breakBtn = document.getElementById("dos-start-break");
+        const resetBtn = document.getElementById("dos-reset-timer");
+        if (!listEl || !nowNextEl || !focusLeftEl || !progressBarEl || !focusBtn || !breakBtn || !resetBtn) return;
+
+        const SCHEDULE = [
+          { start: "05:00", end: "05:20", title: "Wake + nước + ánh sáng", rule: "Không phone 30 phút đầu" },
+          { start: "05:20", end: "06:00", title: "Prime (thở/thiền/viết)", rule: "1 trang: mục tiêu hôm nay + 1 nỗi lo → hành động" },
+          { start: "06:00", end: "07:00", title: "Deep Work #1", rule: "Chỉ 1 việc: North Star task" },
+          { start: "07:00", end: "07:30", title: "Ăn sáng + đi bộ", rule: "Podcast chỉ khi đi bộ" },
+          { start: "09:00", end: "18:00", title: "Work (bắt buộc)", rule: "Chèn 1 block deep work trong giờ nếu có thể" },
+          { start: "18:00", end: "18:45", title: "Shutdown + review", rule: "Viết 3 dòng: done / learned / next" },
+          { start: "18:45", end: "21:10", title: "Đi bộ + ăn tối (connection)", rule: "Đi bộ nhẹ trước/hoặc sau ăn • Không màn hình khi ăn" },
+          { start: "21:10", end: "22:10", title: "Training + tắm", rule: "Tập đủ là thắng, không đòi hoàn hảo" },
+          { start: "22:10", end: "23:40", title: "Deep Work #2 / Build", rule: "Ship 1 phần nhỏ (commit/draft/demo)" },
+          { start: "23:40", end: "00:30", title: "Wind-down", rule: "Giảm ánh sáng, đọc sách giấy" },
+          { start: "00:30", end: "01:30", title: "Sleep protocol", rule: "Đi ngủ cố định, ưu tiên hơn mọi thứ" }
+        ];
+
+        const TIMER_KEY = "neuron6_dos_timer_v1";
+        function readTimer() {
+          try {
+            const raw = localStorage.getItem(TIMER_KEY);
+            if (!raw) return null;
+            const parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed !== "object") return null;
+            if (typeof parsed.mode !== "string" || typeof parsed.startedAt !== "number" || typeof parsed.durationMs !== "number") return null;
+            return parsed;
+          } catch {
+            return null;
+          }
+        }
+        function writeTimer(timer) {
+          localStorage.setItem(TIMER_KEY, JSON.stringify(timer));
+        }
+        function clearTimer() {
+          localStorage.removeItem(TIMER_KEY);
+        }
+
+        function parseHM(hm) {
+          const [h, m] = hm.split(":").map((x) => Number(x));
+          return { h, m };
+        }
+
+        function scheduleBaseDate(now) {
+          const base = new Date(now);
+          const h = now.getHours();
+          const m = now.getMinutes();
+          const minutes = h * 60 + m;
+          if (minutes < 5 * 60) {
+            base.setDate(base.getDate() - 1);
+          }
+          base.setHours(0, 0, 0, 0);
+          return base;
+        }
+
+        function toDateOnBase(base, hm) {
+          const { h, m } = parseHM(hm);
+          const d = new Date(base);
+          d.setHours(h, m, 0, 0);
+          // Lịch chạy từ 05:00 đến 01:30 (qua nửa đêm). Các mốc < 05:00 thuộc "ngày kế tiếp" so với base.
+          if (h * 60 + m < 5 * 60) d.setDate(d.getDate() + 1);
+          return d;
+        }
+
+        function buildWindow(now) {
+          const base = scheduleBaseDate(now);
+          return SCHEDULE.map((it) => {
+            const start = toDateOnBase(base, it.start);
+            let end = toDateOnBase(base, it.end);
+            if (end.getTime() <= start.getTime()) end = new Date(end.getTime() + 24 * 60 * 60 * 1000);
+            return { ...it, startDate: start, endDate: end };
+          });
+        }
+
+        function formatHM(date) {
+          const hh = String(date.getHours()).padStart(2, "0");
+          const mm = String(date.getMinutes()).padStart(2, "0");
+          return `${hh}:${mm}`;
+        }
+
+        function fmtCountdown(ms) {
+          const s = Math.max(0, Math.floor(ms / 1000));
+          const mm = Math.floor(s / 60);
+          const ss = s % 60;
+          return `${String(mm).padStart(2, "0")}:${String(ss).padStart(2, "0")}`;
+        }
+
+        function render() {
+          const now = new Date();
+          const items = buildWindow(now);
+
+          let currentIdx = -1;
+          for (let i = 0; i < items.length; i++) {
+            if (now >= items[i].startDate && now < items[i].endDate) {
+              currentIdx = i;
+              break;
+            }
+          }
+          let nextIdx = -1;
+          if (currentIdx >= 0) {
+            nextIdx = currentIdx + 1 < items.length ? currentIdx + 1 : -1;
+          } else {
+            for (let i = 0; i < items.length; i++) {
+              if (now < items[i].startDate) {
+                nextIdx = i;
+                break;
+              }
+            }
+          }
+
+          const frag = document.createDocumentFragment();
+          items.forEach((it, idx) => {
+            const state =
+              now >= it.endDate
+                ? "done"
+                : idx === currentIdx
+                  ? "now"
+                  : idx === nextIdx
+                    ? "next"
+                    : "upcoming";
+
+            const row = document.createElement("div");
+            row.className = "dos-item";
+            row.dataset.state = state;
+
+            const time = document.createElement("div");
+            time.className = "dos-time";
+            time.textContent = `${formatHM(it.startDate)}–${formatHM(it.endDate)}`;
+
+            const main = document.createElement("div");
+            main.className = "dos-main";
+            const title = document.createElement("strong");
+            title.textContent = it.title;
+            const rule = document.createElement("div");
+            rule.className = "dos-rule";
+            rule.textContent = `Rule: ${it.rule}`;
+            main.appendChild(title);
+            main.appendChild(rule);
+
+            const pill = document.createElement("div");
+            pill.className = `dos-pill ${state}`;
+            pill.textContent = state.toUpperCase();
+
+            row.appendChild(time);
+            row.appendChild(main);
+            row.appendChild(pill);
+            frag.appendChild(row);
+          });
+
+          listEl.replaceChildren(frag);
+
+          const nowLabel = currentIdx >= 0 ? items[currentIdx].title : "—";
+          const nextLabel = nextIdx >= 0 ? items[nextIdx].title : "—";
+          nowNextEl.innerHTML = `Now: <strong>${nowLabel}</strong> · Next: <strong>${nextLabel}</strong>`;
+
+          const timer = readTimer();
+          if (!timer) {
+            focusLeftEl.innerHTML = `Focus: <strong>—</strong>`;
+            progressBarEl.style.width = "0%";
+            focusBtn.textContent = "Start Focus 50m";
+            breakBtn.textContent = "Break 10m";
+            return;
+          }
+
+          const elapsed = Date.now() - timer.startedAt;
+          const left = timer.durationMs - elapsed;
+          const clampedLeft = Math.max(0, left);
+          const pct = Math.min(100, Math.max(0, (elapsed / timer.durationMs) * 100));
+
+          if (left <= 0) {
+            clearTimer();
+            focusLeftEl.innerHTML = `Focus: <strong>00:00</strong>`;
+            progressBarEl.style.width = "100%";
+            focusBtn.textContent = "Start Focus 50m";
+            breakBtn.textContent = "Break 10m";
+            return;
+          }
+
+          progressBarEl.style.width = `${pct.toFixed(2)}%`;
+          const label = timer.mode === "break" ? "Break" : "Focus";
+          focusLeftEl.innerHTML = `${label}: <strong>${fmtCountdown(clampedLeft)}</strong> left`;
+          focusBtn.textContent = timer.mode === "focus" ? "Focus running…" : "Start Focus 50m";
+          breakBtn.textContent = timer.mode === "break" ? "Break running…" : "Break 10m";
+        }
+
+        function startTimer(mode, minutes) {
+          writeTimer({ mode, startedAt: Date.now(), durationMs: minutes * 60 * 1000 });
+          render();
+        }
+
+        focusBtn.addEventListener("click", () => startTimer("focus", 50));
+        breakBtn.addEventListener("click", () => startTimer("break", 10));
+        resetBtn.addEventListener("click", () => {
+          clearTimer();
+          render();
+        });
+
+        render();
+        setInterval(render, 1000);
+      })();
+      (function () {
+        const titleEl = document.getElementById("forecast-title");
+        const bodyEl = document.getElementById("forecast-body");
+        const nowEl = document.getElementById("forecast-now-label");
+        if (!titleEl || !bodyEl || !nowEl) return;
+
+        function sumDigits(n) {
+          const s = String(Math.abs(n)).replace(/\\D/g, "");
+          let total = 0;
+          for (const ch of s) total += Number(ch);
+          return total;
+        }
+        function reduceTo1to9(n) {
+          let x = Math.abs(Number(n)) || 0;
+          while (x > 9) x = sumDigits(x);
+          return x === 0 ? 9 : x;
+        }
+        function hashSeed(str) {
+          let h = 2166136261;
+          for (let i = 0; i < str.length; i++) {
+            h ^= str.charCodeAt(i);
+            h = Math.imul(h, 16777619);
+          }
+          return h >>> 0;
+        }
+        function mulberry32(seed) {
+          let a = seed >>> 0;
+          return function rand() {
+            a |= 0;
+            a = (a + 0x6d2b79f5) | 0;
+            let t = Math.imul(a ^ (a >>> 15), 1 | a);
+            t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+            return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+          };
+        }
+        function pick(rand, arr) {
+          return arr[Math.floor(rand() * arr.length)];
+        }
+        function pickN(rand, arr, n) {
+          const copy = arr.slice();
+          const out = [];
+          for (let i = 0; i < n && copy.length; i++) {
+            const idx = Math.floor(rand() * copy.length);
+            out.push(copy.splice(idx, 1)[0]);
+          }
+          return out;
+        }
+        function ymdVN(date) {
+          const utc = date.getTime() + date.getTimezoneOffset() * 60 * 1000;
+          const vn = new Date(utc + 7 * 60 * 60 * 1000);
+          const y = vn.getFullYear();
+          const m = String(vn.getMonth() + 1).padStart(2, "0");
+          const d = String(vn.getDate()).padStart(2, "0");
+          return { key: `${y}-${m}-${d}`, y, m: Number(m), d: Number(d), vn };
+        }
+
+        const MAJOR = [
+          "The Fool",
+          "The Magician",
+          "The High Priestess",
+          "The Empress",
+          "The Emperor",
+          "The Hierophant",
+          "The Lovers",
+          "The Chariot",
+          "Strength",
+          "The Hermit",
+          "Wheel of Fortune",
+          "Justice",
+          "The Hanged Man",
+          "Death",
+          "Temperance",
+          "The Devil",
+          "The Tower",
+          "The Star",
+          "The Moon",
+          "The Sun",
+          "Judgement",
+          "The World"
+        ];
+        const HUD = [
+          "MISSION: hành động nhỏ > cảm xúc lớn.",
+          "RULE: 1 task. Không loot thêm.",
+          "SAFE ZONE: tập + ngủ là hạ tầng.",
+          "EXTRACT: ship 1 phần nhỏ trước khi nghỉ.",
+          "ANTI-DRAMA: pause 90s → viết ra → làm 1 bước."
+        ];
+        const BOOSTS = [
+          { by: "Gia Cát Lượng", line: "Giữ tĩnh, giữ trục. Một bước đúng hướng hơn ngàn bước vội." },
+          { by: "Lưu Bá Ôn", line: "Thế cục mạnh nhất là kỷ luật đều. Đừng cược vào cảm hứng." },
+          { by: "Einstein", line: "Đơn giản hóa cho tới khi còn đúng bản chất — rồi làm ngay." },
+          { by: "Tesla", line: "Năng lượng theo sự chú ý. Khóa tần số vào một mục tiêu." }
+        ];
+
+        function render() {
+          const now = new Date();
+          const { key, y, m, d, vn } = ymdVN(now);
+          const birth = { year: 2001, month: 4, day: 14 };
+          const seed = hashSeed(`${key}|${birth.year}-${birth.month}-${birth.day}|theme:10`);
+          const rand = mulberry32(seed);
+
+          const lifePath = reduceTo1to9(birth.year + birth.month + birth.day);
+          const personalYear = reduceTo1to9(y + birth.month + birth.day);
+          const personalDay = reduceTo1to9(personalYear + m + d);
+
+          const tarot = pickN(rand, MAJOR, 3);
+          const freq = pick(rand, ["528Hz", "432Hz", "396Hz", "963Hz"]);
+          const hud = pick(rand, HUD);
+          const boost = pick(rand, BOOSTS);
+          const action = pick(rand, [
+            "Chốt 1 North Star cho ngày mai (1 dòng).",
+            "Chuẩn bị loadout: task đầu ngày + đồ tập.",
+            "Xóa 1 việc khỏi danh sách (1 việc bỏ đi).",
+            "Đặt timer 50m và tắt thông báo trước khi bắt đầu.",
+            "Viết 3 dòng shutdown: done / learned / next."
+          ]);
+
+          titleEl.textContent = `Forecast ${key} · LifePath ${lifePath} · Day ${personalDay}`;
+          bodyEl.textContent =
+            `🔢 Numerology\n` +
+            `• Life Path: ${lifePath}\n` +
+            `• Personal Year: ${personalYear}\n` +
+            `• Personal Day: ${personalDay}\n\n` +
+            `🪐 Astrology (giải trí)\n` +
+            `• Sun sign: Aries (Bạch Dương) · (nếu sinh 14/03 thì: Pisces/Song Ngư)\n` +
+            `• Theme: Tháng 10 (Libra/Scorpio season vibe)\n\n` +
+            `🃏 Tarot\n` +
+            `• Past: ${tarot[0]}\n` +
+            `• Present: ${tarot[1]}\n` +
+            `• Action: ${tarot[2]}\n\n` +
+            `📡 Frequency drill (8–12')\n` +
+            `• ${freq} + 10 hơi thở chậm\n\n` +
+            `✅ Tomorrow mission\n` +
+            `• ${action}\n` +
+            `• ${hud}\n\n` +
+            `🧠 Boost (inspired by ${boost.by})\n` +
+            `${boost.line}`;
+
+          const hh = String(vn.getHours()).padStart(2, "0");
+          const mm = String(vn.getMinutes()).padStart(2, "0");
+          const ss = String(vn.getSeconds()).padStart(2, "0");
+          nowEl.textContent = `Hiện tại: ${hh}:${mm}:${ss} · chạy noti: 20:00`;
+        }
+
+        render();
+        setInterval(render, 1000);
+      })();
+      (function () {
         const dot = document.getElementById("st-dot");
         const label = document.getElementById("st-now-label");
         const track = document.getElementById("spacetime-track");
+        const notesWrap = document.getElementById("hud-notes");
         if (!dot || !label || !track) return;
+
+        const cycles = Array.from(track.querySelectorAll(".st-cycle[data-start][data-end]"));
+        function hmToHours(hm) {
+          const [h, m] = hm.split(":").map((x) => Number(x));
+          return h + m / 60;
+        }
+        function hoursToPercent(hours) {
+          return (hours / 24) * 100;
+        }
+        function positionCycles() {
+          cycles.forEach((el) => {
+            const startHm = el.getAttribute("data-start") || "00:00";
+            const endHm = el.getAttribute("data-end") || "00:00";
+            const startH = hmToHours(startHm);
+            let endH = hmToHours(endHm);
+            if (endH <= startH) endH += 24;
+            const leftPct = hoursToPercent(startH);
+            const widthPct = hoursToPercent(endH) - hoursToPercent(startH);
+            el.style.left = `${leftPct}%`;
+            el.style.width = `${widthPct}%`;
+          });
+        }
+        positionCycles();
 
         function tick() {
           const now = new Date();
-          const hours = now.getHours();
-          const minutes = now.getMinutes();
-          const seconds = now.getSeconds();
+          // Display & HUD highlight in VN time (UTC+7) to match the label.
+          const utc = now.getTime() + now.getTimezoneOffset() * 60 * 1000;
+          const vn = new Date(utc + 7 * 60 * 60 * 1000);
+          const hours = vn.getHours();
+          const minutes = vn.getMinutes();
+          const seconds = vn.getSeconds();
           const total = hours + minutes / 60 + seconds / 3600;
           const percent = (total / 24) * 100;
           dot.style.left = percent + "%";
@@ -1287,6 +2109,24 @@
           const mm = String(minutes).padStart(2, "0");
           const ss = String(seconds).padStart(2, "0");
           label.textContent = `Hiện tại: ${hh}:${mm}:${ss}`;
+
+          if (notesWrap) {
+            const nowMin = hours * 60 + minutes + seconds / 60;
+            const notes = Array.from(notesWrap.querySelectorAll(".st-note[data-start][data-end]"));
+            notes.forEach((el) => {
+              const start = el.getAttribute("data-start") || "00:00";
+              const end = el.getAttribute("data-end") || "00:00";
+              const [sh, sm] = start.split(":").map((x) => Number(x));
+              const [eh, em] = end.split(":").map((x) => Number(x));
+              const startMin = sh * 60 + sm;
+              let endMin = eh * 60 + em;
+              const crossesMidnight = endMin <= startMin;
+              const inRange = crossesMidnight
+                ? nowMin >= startMin || nowMin < endMin
+                : nowMin >= startMin && nowMin < endMin;
+              el.classList.toggle("is-now", inRange);
+            });
+          }
         }
 
         tick();
@@ -1378,109 +2218,40 @@
           });
         });
       })();
-      // ==== TELEGRAM REMINDERS ====
-      function sendTelegram(text) {
-        const TOKEN = "8246910964:AAHaIYkqy9pWwnDEXP5VBmNXU4WDhn7udRA";
-        const CHAT_ID = "8270116773";
+      // ==== NOTIFICATION TEST (SERVER-SIDE ONLY) ====
+      // Security: Never keep Telegram tokens in the browser.
+      // Instead, call the local reminder server (default: http://127.0.0.1:10000).
+      function getNotiServerBase() {
+        return localStorage.getItem("NEURON6_NOTI_SERVER") || "http://127.0.0.1:10000";
+      }
 
-        return fetch("https://api.telegram.org/bot" + TOKEN + "/sendMessage", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: CHAT_ID, text }),
-        });
+      function callNotiServer(path) {
+        const base = getNotiServerBase();
+        return fetch(base + path, { method: "POST" });
       }
 
       function sendTelegramReminderTest() {
-        const now = new Date();
-        const text =
-          "🔔 TEST NOTI\n\n" +
-          "Giờ gửi: " +
-          now.toTimeString().slice(0, 8) +
-          "\n" +
-          "Nếu bạn thấy tin này trên Telegram, bot đã hoạt động.";
-
-        sendTelegram(text)
+        callNotiServer("/test-noti?slot=wake")
           .then((res) => {
-            if (!res.ok) {
-              console.error("Telegram error status:", res.status);
-              alert("Gửi noti THẤT BẠI (xem console).");
-            } else {
-              alert("Đã gửi noti test lên Telegram. Mở app để kiểm tra.");
-            }
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            alert("Đã yêu cầu server bắn test noti. Mở Telegram để kiểm tra.");
           })
           .catch((err) => {
-            console.error("Telegram fetch error:", err);
-            alert("Lỗi kết nối khi gửi noti (xem console).");
+            console.error("Noti server error:", err);
+            alert("Không gọi được noti server. Hãy chạy `node server/index.js` và đảm bảo PORT 10000 mở.");
           });
       }
 
-      const dailyReminders = [
-        {
-          hour: 4,
-          minute: 44,
-          text:
-            "⏰ 04:44–06:55 · Mini Focus\n\n" +
-            "Thức sớm (thỉnh thoảng). Nếu dậy được & tỉnh: 15–20' Focus nhẹ cho 1 chủ đề."
-        },
-        {
-          hour: 6,
-          minute: 55,
-          text:
-            "🌅 06:55–08:30 · Focus → Flow sáng\n\n" +
-            "1 vòng nhỏ trước khi đi làm: 25' Focus 1 chủ đề + 30–45' Flow bài tương tự."
-        },
-        {
-          hour: 18,
-          minute: 0,
-          text:
-            "🌇 18:00–20:00 · Hồi sức\n\n" +
-            "Ăn, tắm, đi bộ ngắn. Không vội học. Chuẩn bị năng lượng cho vòng tối."
-        },
-        {
-          hour: 20,
-          minute: 0,
-          text:
-            "🎯 20:00–21:30 · Vòng tối Focus → Flow → Diffuse\n\n" +
-            "20:00–20:30: Focus 1 chủ đề.\n" +
-            "20:30–21:15: Flow nhiều bài tương tự.\n" +
-            "21:15–21:30: Diffuse – đi bộ/tắm, không cầm điện thoại."
-        },
-        {
-          hour: 22,
-          minute: 0,
-          text:
-            "🌙 22:00–01:00 · Sleep\n\n" +
-            "Giảm màn hình, chuẩn bị ngủ. Ưu tiên ngủ để não 'chép file' sau vòng học tối nay."
-        }
-      ];
-
-      (function setupTimeReminders() {
-        const sentToday = new Set();
-
-        function checkAndSend() {
-          const now = new Date();
-          const h = now.getHours();
-          const m = now.getMinutes();
-          const keyPrefix = now.toISOString().slice(0, 10); // YYYY-MM-DD
-
-          dailyReminders.forEach((r, idx) => {
-            const key = keyPrefix + "-" + idx;
-            if (h === r.hour && m === r.minute && !sentToday.has(key)) {
-              sentToday.add(key);
-              sendTelegram(r.text).catch(console.error);
-            }
-          });
-        }
-
-        checkAndSend();
-        setInterval(checkAndSend, 60 * 1000);
-      })();
-
       function sendAllRemindersNow() {
-        dailyReminders.forEach((r) => {
-          sendTelegram("⏱ TEST LỊCH\n\n" + r.text).catch(console.error);
-        });
-        alert("Đã gửi thử toàn bộ noti lịch hôm nay lên Telegram.");
+        callNotiServer("/test-all?delayMs=450")
+          .then((res) => {
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            alert("Đã yêu cầu server bắn toàn bộ lịch test lên Telegram.");
+          })
+          .catch((err) => {
+            console.error("Noti server error:", err);
+            alert("Không gọi được noti server để bắn toàn bộ. Hãy chạy server/index.js trước.");
+          });
       }
       (function () {
         // Chỉ hiện một số lời nhắn vào tối Chủ nhật hằng tuần (theo giờ máy người dùng, gần với giờ VN)
